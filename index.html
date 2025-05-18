@@ -370,7 +370,94 @@
     </style>
 </head>
 <body>
+.case-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.case-details {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.case-details[open] {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.case-summary {
+    padding: 15px 20px;
+    background: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Убираем маркер в некоторых браузерах */
+}
+
+.case-summary::-webkit-details-marker {
+    display: none; /* Скрываем маркер в Chrome */
+}
+
+.case-summary:after {
+    content: "+";
+    font-size: 24px;
+    color: #555;
+    transition: transform 0.3s;
+}
+
+.case-details[open] .case-summary:after {
+    content: "-";
+}
+
+.case-preview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.case-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.case-full-content {
+    padding: 20px;
+    background: white;
+}
+
+.problem-solution {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.problem, .solution {
+    flex: 1;
+}
+
+.accordion-expand-all {
+    background: #f0f0f0;
+    margin-right: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .problem-solution {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .case-preview {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
 <!-- Шапка -->
 <header class="hero" role="banner">
     <div class="container">
