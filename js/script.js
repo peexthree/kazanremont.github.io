@@ -54,13 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Скрипт для сворачивания всех кейсов
-document.querySelector('.accordion-collapse-all')?.addEventListener('click', () => {
-    const allDetails = document.querySelectorAll('.case-details');
-    allDetails.forEach(details => {
-        details.removeAttribute('open'); // Закрываем все <details>
-    });
-});
 
 // Скрипт для открытия Telegram бота
 document.getElementById('send-photo-btn')?.addEventListener('click', () => {
