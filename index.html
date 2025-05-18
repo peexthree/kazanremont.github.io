@@ -284,10 +284,7 @@ document.getElementById("order-form").addEventListener("submit", async function(
     
     // Валидация телефона
     const phoneInput = document.getElementById("client-phone");
-    if (!phoneInput.checkValidity()) {
-        alert("Пожалуйста, введите корректный номер телефона");
-        return;
-    }
+
 
     const text = `📌 Новая заявка!\n
                  👤 Имя: ${formData.get("name")}\n
