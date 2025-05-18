@@ -4,137 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KazanRemont – Срочный ремонт телефонов в Казани</title>
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Иконка сайта -->
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Шапка */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Галерея работ */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Форма */
+        .form-section {
+            background: #f5f5f5;
+            padding: 50px 0;
+        }
+        
+        .lead-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка с параллаксом и лого -->
-    <header class="hero">
-        <!-- Навигация с лого -->
-        <nav class="navbar wow fadeIn">
-            <div class="container">
-                <a href="/" class="logo-link">
-                    <img src="images/logo-white.png" alt="KazanRemont" width="220" height="80" class="logo">
-                </a>
-                <a href="tel:+78001234567" class="phone-link">8 (800) 123-45-67</a>
-            </div>
-        </nav>
-
-        <!-- Основной заголовок -->
-        <div class="hero-content container wow fadeInUp">
-            <h1>Профессиональный ремонт <span>телефонов в Казани</span></h1>
-            <div class="hero-features">
-                <div class="feature-item">🚗 Выезд мастера за 30 мин</div>
-                <div class="feature-item">🔧 Гарантия до 1 года</div>
-                <div class="feature-item">💯 Бесплатная диагностика</div>
-            </div>
-            <div class="hero-buttons">
-                <a href="#form" class="btn btn-primary">Вызвать мастера</a>
-                <a href="https://t.me/remonter_kazan_bot" class="btn btn-outline">
-                    <img src="images/telegram-icon.svg" alt="Telegram" width="20">
-                    Написать в бота
-                </a>
+    <!-- Шапка -->
+    <header class="hero animate__animated animate__fadeIn">
+        <div class="container">
+            <h1>Профессиональный ремонт телефонов в Казани</h1>
+            <p>Выезд мастера · Бесплатная диагностика · Гарантия 1 год</p>
+            <div>
+                <a href="#form" class="btn">Вызвать мастера</a>
+                <a href="https://t.me/remonter_kazan_bot" class="btn">Написать в Telegram</a>
             </div>
         </div>
-        
-        <!-- Кнопка прокрутки вниз -->
-        <a href="#features" class="scroll-down">
-            <span></span>
-        </a>
     </header>
 
-    <!-- Блок преимуществ -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <h2 class="section-title wow fadeIn">Почему выбирают нас</h2>
-            <div class="features-grid">
-                <div class="feature-card wow fadeIn" data-wow-delay="0.1s">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Оригинальные запчасти</h3>
-                    <p>Используем только сертифицированные комплектующие</p>
+    <!-- Услуги -->
+    <section class="container">
+        <h2 class="animate__animated animate__fadeIn">Наши услуги</h2>
+        <div class="gallery">
+            <!-- Замена экрана -->
+            <div class="gallery-item animate__animated animate__fadeInUp">
+                <img src="https://images.pexels.com/photos/3568518/pexels-photo-3568518.jpeg" alt="Замена экрана">
+                <div class="gallery-caption">
+                    <h3>Замена экрана</h3>
+                    <p>от 1990 ₽ · 20 минут</p>
                 </div>
-                <!-- Еще 2 карточки -->
+            </div>
+            
+            <!-- Замена батареи -->
+            <div class="gallery-item animate__animated animate__fadeInUp animate__delay-1s">
+                <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb" alt="Замена батареи">
+                <div class="gallery-caption">
+                    <h3>Замена батареи</h3>
+                    <p>от 1490 ₽ · 15 минут</p>
+                </div>
+            </div>
+            
+            <!-- Ремонт после воды -->
+            <div class="gallery-item animate__animated animate__fadeInUp animate__delay-2s">
+                <img src="https://images.pexels.com/photos/5231112/pexels-photo-5231112.jpeg" alt="Ремонт после воды">
+                <div class="gallery-caption">
+                    <h3>Ремонт после воды</h3>
+                    <p>от 2490 ₽ · от 1 часа</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Форма заявки -->
+    <!-- Форма -->
     <section id="form" class="form-section">
-        <div class="container">
-            <div class="form-wrapper wow fadeIn">
-                <h2>Оставьте заявку</h2>
-                <p>Мастер перезвонит в течение 5 минут</p>
-                
-                <form class="lead-form" id="order-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Телефон" required>
-                    </div>
-                    <button type="submit" class="btn btn-submit">
-                        <span class="btn-text">Вызвать мастера</span>
-                        <span class="btn-loader"></span>
-                    </button>
-                </form>
-                
-                <div class="form-footer">
-                    <p>Или напишите в <a href="https://t.me/remonter_kazan_bot">Telegram-бота</a></p>
+        <div class="container animate__animated animate__fadeIn">
+            <h2>Оставьте заявку</h2>
+            <form class="lead-form" id="order-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
                 </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <button type="submit" class="btn">Жду звонка</button>
+                <p style="text-align: center; margin-top: 15px;">
+                    Или напишите в <a href="https://t.me/remonter_kazan_bot">Telegram</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="container" style="padding: 50px 0;">
+        <h2 class="animate__animated animate__fadeIn">Отзывы клиентов</h2>
+        <div style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 10px;">
+                <p>"Починили iPhone за 15 минут прямо в кафе. Очень удобно!"</p>
+                <p><strong>— Алина, Казань</strong></p>
+            </div>
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 10px;">
+                <p>"Мастер приехал ночью и спас перед важной поездкой. Рекомендую!"</p>
+                <p><strong>— Иван, Казань</strong></p>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo-white.png" alt="KazanRemont" width="200" height="70">
-                </div>
-                <div class="footer-contacts">
-                    <a href="tel:+78001234567">8 (800) 123-45-67</a>
-                    <p>Казань, ул. Примерная, 123</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/wow.min.js"></script>
-    <script src="js/script.js"></script>
     <script>
-        // Инициализация анимаций
-        new WOW({
-            offset: 100,
-            mobile: false
-        }).init();
-        
-        // Отправка формы в Telegram и CRM
+        // Отправка формы
         document.getElementById('order-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const form = this;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const formData = new FormData(form);
-            
-            // Показываем индикатор загрузки
-            submitBtn.classList.add('loading');
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
             
             // Отправка в Telegram
-            fetch(`https://api.telegram.org/bot8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro/sendMessage?chat_id=5178416366&text=Новая заявка:%0AИмя: ${formData.get('name')}%0AТелефон: ${formData.get('phone')}`)
-                .then(response => {
-                    // Успешная отправка
-                    submitBtn.classList.remove('loading');
-                    alert('Заявка отправлена! Мастер свяжется с вами в течение 5 минут.');
-                    form.reset();
-                })
-                .catch(error => {
-                    // Ошибка
-                    submitBtn.classList.remove('loading');
-                    alert('Ошибка отправки. Пожалуйста, позвоните нам напрямую.');
-                });
+            fetch(`https://api.telegram.org/bot8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro/sendMessage?chat_id=5178416366&text=Новая заявка:%0AИмя: ${name}%0AТелефон: ${phone}`);
+            
+            alert('Спасибо! Мастер свяжется с вами в течение 5 минут.');
+            this.reset();
         });
     </script>
 </body>
