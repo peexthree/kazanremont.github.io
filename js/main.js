@@ -1,66 +1,58 @@
-// Раскрытие/сворачивание аккордеона
-document.querySelector('.accordion-expand-all').addEventListener('click', function() {
-    const allDetails = document.querySelectorAll('.case-details');
-    const isAnyOpen = [...allDetails].some(detail => detail.open);
-    
-    allDetails.forEach(detail => {
-        detail.open = !isAnyOpen;
-    });
-    
-    this.textContent = isAnyOpen ? 'Развернуть все кейсы' : 'Свернуть все кейсы';
-});
+// js/main.js
 
-// Таймер обратного отсчета
+// === Таймер ===
 function updateTimer() {
     const now = new Date();
     const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
     const diff = endOfDay - now;
-    
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
 
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
-setInterval(updateTimer, 1000);
-updateTimer();
+// Обновление таймера раз в секунду
+if (document.getElementById('countdown')) {
+    setInterval(updateTimer, 1000);
+    updateTimer();
+}
 
-// Обработка формы
-document.getElementById('order-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('client-name').value.trim();
-    const phone = document.getElementById('client-phone').value.trim();
-    const service = document.getElementById('client-service').value;
+// === Форма ===
+const form = document.getElementById('order-form');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    if (!name || !phone || !service) {
-        alert('Пожалуйста, заполните все поля');
-        return;
-    }
+        const name = this.clientName.value.trim();
+        const phone = this.clientPhone.value.trim();
+        const service = this.clientService.value;
 
-    const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
-    const chatId = '5178416366';
-    const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
+        const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
+        const chatId = '5178416366';
 
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-        .then(response => {
-            if (response.ok) {
-                alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-                this.reset();
-            } else {
-                throw new Error('Ошибка отправки');
-            }
-        })
-        .catch(() => {
-            alert('Ошибка при отправке. Пожалуйста, напишите нам в Telegram.');
-        });
-});
+        const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
 
-// Маска для телефона
-document.getElementById('client-phone').addEventListener('input', function(e) {
-    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-});
+        fetch(`https://api.telegram.org/bot ${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+            .then(res => res.json())
+            .then(data => {
+                alert('Заявка отправлена!');
+                form.reset();
+            })
+            .catch(() => {
+                alert('Ошибка. Напишите нам напрямую.');
+            });
+    });
+}
+
+// === Раскрытие кейсов ===
+const expandBtn = document.querySelector('.accordion-expand-all');
+if (expandBtn) {
+    expandBtn.addEventListener('click', () => {
+        const details = document.querySelectorAll('.case-details');
+        details.forEach(detail => detail.setAttribute('open', true));
+    });
+}
