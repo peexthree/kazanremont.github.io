@@ -3,135 +3,167 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия 2 года, оригинальные запчасти."/>
+    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия до 2 лет, оригинальные запчасти."/>
     <title>KazanRemont – Ремонт телефонов с выездом за 40 минут</title>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css "/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css "/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ">
 
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <header class="hero">
     <div class="container">
-        <div class="hero-content animate__animated animate__fadeIn">
-            <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
-            <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
-            <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
-            <div class="hero-buttons">
-                <a href="#form" class="btn btn-primary">Вызвать мастера</a>
-                <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" aria-label="Написать в Telegram">
-                    <i class="fab fa-telegram"></i> Написать в Telegram
-                </a>
-            </div>
+        <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
+        <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
+        <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
+        <div class="hero-buttons">
+            <a href="#form" class="btn btn-primary">Вызвать мастера</a>
+            <a href="https://t.me/kazanremont_bot?start=app " class="btn btn-telegram" target="_blank">
+                <i class="fab fa-telegram"></i> Написать в Telegram
+            </a>
         </div>
     </div>
 </header>
 
-<main>
-    <!-- Таймер скидки -->
-    <section class="discount">
-        <div class="container">
-            <div class="discount-content animate__animated animate__pulse">
-                <h2><span style="color: var(--primary);">Скидка 20%</span> на первый ремонт</h2>
-                <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
-                <div id="countdown" class="timer">
-                    <div class="timer-block"><span id="hours">12</span><br><small>часов</small></div>
-                    <div class="timer-block"><span id="minutes">00</span><br><small>минут</small></div>
-                    <div class="timer-block"><span id="seconds">00</span><br><small>секунд</small></div>
+<!-- Таймер -->
+<section class="discount">
+    <div class="container">
+        <div class="discount-content animate__animated animate__pulse">
+            <h2><span style="color: var(--primary);">Скидка 20%</span> на первый ремонт</h2>
+            <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
+            <div id="countdown" class="timer">
+                <div class="timer-block"><span id="hours">12</span><br><small>часов</small></div>
+                <div class="timer-block"><span id="minutes">00</span><br><small>минут</small></div>
+                <div class="timer-block"><span id="seconds">00</span><br><small>секунд</small></div>
+            </div>
+            <a href="#form" class="btn btn-primary">Получить скидку</a>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="service-grid">
+            <article class="service-card animate__animated animate__fadeInUp">
+                <img src="images/3.jpg" alt="Замена экрана телефона" loading="lazy" width="300" height="200">
+                <div class="service-content">
+                    <h3>Замена экрана</h3>
+                    <p>Профессиональная замена дисплеев iPhone и Android. Используем только проверенные комплектующие.</p>
+                    <div class="service-price">
+                        <span class="old-price">4500 ₽</span>
+                        <span class="new-price">2990 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
                 </div>
-                <a href="#form" class="btn btn-primary">Получить скидку</a>
+            </article>
+            <article class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+                <img src="images/4.jpg" alt="Замена аккумулятора" loading="lazy" width="300" height="200">
+                <div class="service-content">
+                    <h3>Замена аккумулятора</h3>
+                    <p>Новые батареи с увеличенной ёмкостью. Восстановление первоначальной работы устройства.</p>
+                    <div class="service-price">
+                        <span class="old-price">3500 ₽</span>
+                        <span class="new-price">2490 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
+                </div>
+            </article>
+            <article class="service-card animate__animated animate__fadeInUp animate__delay-2s">
+                <img src="images/5.jpg" alt="Ремонт после воды" loading="lazy" width="300" height="200">
+                <div class="service-content">
+                    <h3>Ремонт после воды</h3>
+                    <p>Чистка платы, удаление коррозии, восстановление функциональности. От 1 часа.</p>
+                    <div class="service-price">
+                        <span class="old-price">4000 ₽</span>
+                        <span class="new-price">2990 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- О нас -->
+<section class="about">
+    <div class="container">
+        <h2>О нашей мастерской</h2>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="images/15.jpg" alt="Мастерская ремонта телефонов" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h3>Профессиональный ремонт с 2018 года</h3>
+                <p>Команда из 12 опытных мастеров выполнила более 10 000 заказов. Мы используем только оригинальные запчасти и профессиональное оборудование.</p>
+                <ul>
+                    <li>✅ Официальная гарантия до 2 лет</li>
+                    <li>✅ Бесплатная диагностика</li>
+                    <li>✅ Работаем круглосуточно</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Услуги -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title animate__animated animate__fadeIn">Наши услуги</h2>
-            <div class="service-grid">
-                <article class="service-card animate__animated animate__fadeInUp">
-                    <img src="images/3.jpg" alt="Замена экрана телефона" loading="lazy" width="300" height="200">
-                    <div class="service-content">
-                        <h3>Замена экрана</h3>
-                        <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
-                        <div class="service-price">
-                            <span class="old-price">4500 ₽</span>
-                            <span class="new-price">2990 ₽</span>
-                        </div>
-                        <a href="#form" class="btn btn-primary">Заказать</a>
-                    </div>
-                </article>
-                <article class="service-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <img src="images/4.jpg" alt="Замена аккумулятора телефона" loading="lazy" width="300" height="200">
-                    <div class="service-content">
-                        <h3>Замена аккумулятора</h3>
-                        <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
-                        <div class="service-price">
-                            <span class="old-price">3500 ₽</span>
-                            <span class="new-price">2490 ₽</span>
-                        </div>
-                        <a href="#form" class="btn btn-primary">Заказать</a>
-                    </div>
-                </article>
-                <article class="service-card animate__animated animate__fadeInUp animate__delay-2s">
-                    <img src="images/5.jpg" alt="Ремонт после воды" loading="lazy" width="300" height="200">
-                    <div class="service-content">
-                        <h3>Ремонт после воды</h3>
-                        <p>Экстренная помощь при попадании жидкости. Спасем 90% «утопленников».</p>
-                        <div class="service-price">
-                            <span class="old-price">4000 ₽</span>
-                            <span class="new-price">2990 ₽</span>
-                        </div>
-                        <a href="#form" class="btn btn-primary">Заказать</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- О нас -->
-    <section class="about">
-        <div class="container">
-            <h2 class="section-title">О нашей мастерской</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="images/15.jpg" alt="Мастерская ремонта телефонов" loading="lazy" width="600" height="auto">
+<!-- Примеры работ -->
+<section class="cases">
+    <div class="container">
+        <h2 class="section-title">Примеры наших работ</h2>
+        <div class="case-grid">
+            <article class="case-card">
+                <img src="images/8.jpg" alt="iPhone до ремонта" loading="lazy" width="300" height="200">
+                <div class="case-content">
+                    <h3>Разбитый экран iPhone 13</h3>
+                    <p>Полная замена дисплея с сохранением заводской цветопередачи.</p>
                 </div>
-                <div class="about-text">
-                    <h3>Профессиональный ремонт с 2018 года</h3>
-                    <p>Наша команда из 12 опытных мастеров обслужила более 10 000 клиентов в Казани. Используем только оригинальные запчасти и профессиональное оборудование.</p>
-                    <ul>
-                        <li>✅ Официальная гарантия до 2 лет</li>
-                        <li>✅ Бесплатная диагностика</li>
-                        <li>✅ Работаем круглосуточно</li>
-                    </ul>
+            </article>
+            <article class="case-card">
+                <img src="images/9.jpg" alt="iPhone после ремонта" loading="lazy" width="300" height="200">
+                <div class="case-content">
+                    <h3>Результат после ремонта</h3>
+                    <p>Новый экран с заводской калибровкой и защитой от бликов.</p>
                 </div>
-            </div>
+            </article>
+            <article class="case-card">
+                <img src="images/10.jpg" alt="Телефон после воды" loading="lazy" width="300" height="200">
+                <div class="case-content">
+                    <h3>Ремонт после попадания воды</h3>
+                    <p>Чистка платы, удаление коррозии, восстановление функциональности.</p>
+                </div>
+            </article>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Отзывы -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Отзывы клиентов</h2>
-            <div class="testimonials-slider">
+<!-- Бесконечная прокрутка -->
+<div id="infinite-scroll" class="infinite-section container"></div>
+
+<!-- Отзывы -->
+<section class="testimonials" aria-labelledby="reviews-heading">
+    <div class="container">
+        <h2 id="reviews-heading" class="section-title">Отзывы клиентов</h2>
+        <div class="testimonial-list">
+            <div class="testimonial-scroll" id="testimonial-scroll">
+                <!-- 30+ отзывов -->
                 <article class="testimonial-card">
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        <p>"Уронил iPhone в воду во время рыбалки. Думал, всё — конец. Но мастер приехал через 25 минут, починил за час, и телефон работает как новый!"</p>
+                        <p>"Уронил телефон в воду. Думал всё. Но мастер приехал через полчаса, починил за час. Теперь как новый!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/6.jpg" alt="Фото клиента Дмитрий" loading="lazy" width="50" height="50">
+                        <img src="images/6.jpg" alt="Дмитрий" loading="lazy" class="author-avatar">
                         <div>
                             <strong>Дмитрий</strong>
                             <div>iPhone 12 Pro · Казань</div>
@@ -147,7 +179,7 @@
                         <p>"Замена экрана у меня в офисе заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую своим коллегам!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/7.jpg" alt="Фото клиента Алина" loading="lazy" width="50" height="50">
+                        <img src="images/7.jpg" alt="Алина" loading="lazy" class="author-avatar">
                         <div>
                             <strong>Алина</strong>
                             <div>Samsung S21 · Казань</div>
@@ -155,46 +187,46 @@
                         </div>
                     </div>
                 </article>
+                <!-- Еще 28 отзывов -->
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Форма -->
-    <section id="form" class="form-section">
-        <div class="container">
-            <div class="form-container animate__animated animate__fadeIn">
-                <h2>Вызвать мастера</h2>
-                <form id="order-form" novalidate>
-                    <input type="text" id="client-name" placeholder="Ваше имя" required>
-                    <input type="tel" id="client-phone" placeholder="+7 (___) ___-__-__" required>
-                    <select id="client-service" required>
-                        <option value="" disabled selected>Выберите услугу</option>
-                        <option>Замена экрана</option>
-                        <option>Замена аккумулятора</option>
-                        <option>Ремонт после воды</option>
-                        <option>Диагностика</option>
-                        <option>Другая проблема</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary">Вызвать мастера</button>
-                    <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram">
-                        <i class="fab fa-telegram"></i> Написать в Telegram
-                    </a>
-                </form>
-            </div>
+<!-- Форма -->
+<section id="form" class="form-section">
+    <div class="container">
+        <div class="form-container animate__animated animate__fadeIn">
+            <h2>Оставьте заявку</h2>
+            <form id="order-form" novalidate>
+                <input type="text" id="client-name" placeholder="Ваше имя" required>
+                <input type="tel" id="client-phone" placeholder="+7 (___) ___-__-__" required>
+                <select id="client-service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option>Замена экрана</option>
+                    <option>Замена аккумулятора</option>
+                    <option>Ремонт после воды</option>
+                    <option>Диагностика</option>
+                    <option>Другое</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Вызвать мастера</button>
+            </form>
         </div>
-    </section>
-</main>
+    </div>
+</section>
+
+<!-- Telegram Mini App -->
+<iframe id="tg-app" src="https://t.me/kazanremont_bot?start=app " style="display:none; width:100%; height:500px;"></iframe>
+<a href="#" onclick="showTelegramApp()" class="tg-app-link">💬 Написать в Telegram</a>
 
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <div class="footer-copyright">
-            © 2025 KazanRemont. Все права защищены.
-        </div>
+        <div class="footer-copyright">© 2025 KazanRemont. Все права защищены.</div>
     </div>
 </footer>
 
-<!-- JS -->
+<!-- Подключение JS -->
 <script src="js/script.js" defer></script>
 
 </body>
