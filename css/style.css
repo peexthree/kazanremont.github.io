@@ -1,91 +1,133 @@
-/* Основные стили */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    color: #333;
+:root {
+    --primary: #4CAF50;
+    --primary-dark: #45a049;
+    --secondary: #2196F3;
+    --dark: #333;
+    --light: #f5f5f5;
+    --gray: #777;
+    --red: #f44336;
+    --transition: all 0.3s ease-in-out;
 }
 
-.hero {
-    background: url('../images/hero-bg.jpg') no-repeat center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    scroll-behavior: smooth;
 }
 
 .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/1.jpg') no-repeat center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Кнопки */
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
 .btn {
     display: inline-block;
-    background: #ff5722;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
+    padding: 12px 24px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
+    transition: var(--transition);
+    margin: 10px 5px;
 }
 
-.btn:hover {
-    background: #e64a19;
-    transform: translateY(-3px);
-}
-
-.tg-button {
-    background: #0088cc;
-}
-
-/* Форма */
-.lead-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 30px;
-    background: #f9f9f9;
-    border-radius: 10px;
-}
-
-.lead-form input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.lead-form button {
-    width: 100%;
-    padding: 12px;
-    background: #ff5722;
+.btn-primary {
+    background-color: var(--primary);
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.form-note {
-    margin-top: 15px;
-    font-size: 14px;
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-telegram {
+    background-color: #0088cc;
+    color: white;
+}
+
+.btn-telegram:hover {
+    background-color: #0077b5;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.section-title {
     text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--dark);
 }
 
-.form-note a {
-    color: #0088cc;
-    text-decoration: none;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.service-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.wow {
-    visibility: hidden;
+.service-card:hover {
+    transform: translateY(-10px);
 }
+
+.service-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.service
