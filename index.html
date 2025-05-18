@@ -4,49 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия 1 год, оригинальные запчасти.">
-    <title>KazanRemont – Ремонт телефонов с выездом за 30 минут</title>
+    <title>KazanRemont – Ремонт телефонов с выездом за 40 минут</title>
     
-    <!-- Preload critical resources -->
+    <!-- Preload -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <link rel="preload" href="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
     
-    <!-- Preconnect to external domains -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://api.telegram.org">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://images.unsplash.com">
 </head>
 <body>
     <!-- Шапка -->
     <header class="hero" role="banner">
         <div class="container">
             <div class="hero-content animate__animated animate__fadeIn">
-                <h1>Ремонт телефонов в Казани с выездом за 30 минут</h1>
+                <h1>Ремонт телефонов в Казани с выездом за 40 минут</h1>
                 <p>Бесплатная диагностика · Гарантия до 2 лет · Оригинальные запчасти</p>
                 <div class="hero-buttons">
-                    <a href="#form" class="btn animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
+                    <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
                     <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram animate__animated animate__fadeIn animate-delay-1" aria-label="Написать в Telegram">
                         <i class="fab fa-telegram"></i> Написать в Telegram
                     </a>
+                </div>
+                <div class="hero-scroll animate__animated animate__fadeIn animate-delay-2">
+                    <span>Листайте вниз</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Таймер скидки -->
+        <section class="discount">
+            <div class="container">
+                <div class="discount-content animate__animated animate__pulse">
+                    <div class="discount-badge">Акция!</div>
+                    <h2>Скидка 15% на первый ремонт</h2>
+                    <p>Только сегодня! Успейте воспользоваться предложением:</p>
+                    <div class="timer" id="countdown">
+                        <div class="timer-block">
+                            <span id="hours">12</span>
+                            <span>часов</span>
+                        </div>
+                        <div class="timer-block">
+                            <span id="minutes">00</span>
+                            <span>минут</span>
+                        </div>
+                        <div class="timer-block">
+                            <span id="seconds">00</span>
+                            <span>секунд</span>
+                        </div>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Получить скидку</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Услуги -->
         <section id="services" class="services" aria-labelledby="services-heading">
             <div class="container">
-                <h2 id="services-heading" class="section-title animate__animated animate__fadeIn">Популярные услуги</h2>
+                <h2 id="services-heading" class="section-title animate__animated animate__fadeIn">Наши услуги</h2>
                 <div class="service-grid">
                     <!-- Карточка услуги 1 -->
                     <article class="service-card animate__animated animate__fadeInUp">
@@ -60,8 +87,8 @@
                                 <i class="fas fa-clock" aria-hidden="true"></i> 20-30 минут
                             </div>
                             <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
-                            <div class="service-price">от 1990 ₽</div>
-                            <a href="#form" class="btn btn-block">Заказать</a>
+                            <div class="service-price">от 2990 ₽</div>
+                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                     
@@ -77,8 +104,8 @@
                                 <i class="fas fa-clock" aria-hidden="true"></i> 15-20 минут
                             </div>
                             <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
-                            <div class="service-price">от 1490 ₽</div>
-                            <a href="#form" class="btn btn-block">Заказать</a>
+                            <div class="service-price">от 2490 ₽</div>
+                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                     
@@ -95,96 +122,173 @@
                             </div>
                             <p>Экстренная помощь при попадании жидкости. Спасем 90% "утопленников".</p>
                             <div class="service-price">от 2490 ₽</div>
-                            <a href="#form" class="btn btn-block">Заказать</a>
+                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Преимущества -->
-        <section class="benefits" aria-labelledby="benefits-heading">
+        <!-- Кейсы -->
+        <section class="cases" aria-labelledby="cases-heading">
             <div class="container">
-                <h2 id="benefits-heading" class="section-title animate__animated animate__fadeIn">Почему выбирают нас</h2>
-                <div class="benefit-grid">
-                    <div class="benefit-card animate__animated animate__fadeIn">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                <h2 id="cases-heading" class="section-title">Реальные кейсы ремонта</h2>
+                <div class="cases-slider">
+                    <!-- Кейс 1 -->
+                    <article class="case-card">
+                        <div class="case-before-after">
+                            <div class="case-before">
+                                <h4>До ремонта</h4>
+                                <img src="img/case1-before.jpg" alt="Телефон до ремонта" loading="lazy">
+                                <p>Разбитый экран, не работает сенсор</p>
+                            </div>
+                            <div class="case-after">
+                                <h4>После ремонта</h4>
+                                <img src="img/case1-after.jpg" alt="Телефон после ремонта" loading="lazy">
+                                <p>Новый экран, полная функциональность</p>
+                            </div>
                         </div>
-                        <h3>Скорость</h3>
-                        <p>90% ремонтов выполняем при вас за 20-40 минут без потери качества</p>
-                    </div>
+                        <div class="case-details">
+                            <h3>iPhone 16 Pro - замена экрана</h3>
+                            <div class="case-meta">
+                                <span><i class="fas fa-clock"></i> 25 минут</span>
+                                <span><i class="fas fa-ruble-sign"></i> 4500 ₽</span>
+                                <span><i class="fas fa-calendar-alt"></i> 15.05.2025</span>
+                            </div>
+                            <p>Клиент уронил телефон на асфальт. Мы заменили экран на оригинальный с полной калибровкой. Гарантия на работу - 1 год.</p>
+                        </div>
+                    </article>
                     
-                    <div class="benefit-card animate__animated animate__fadeIn animate-delay-1">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <!-- Кейс 2 -->
+                    <article class="case-card">
+                        <div class="case-before-after">
+                            <div class="case-before">
+                                <h4>До ремонта</h4>
+                                <img src="img/case2-before.jpg" alt="Телефон до ремонта" loading="lazy">
+                                <p>Попала вода, не включается</p>
+                            </div>
+                            <div class="case-after">
+                                <h4>После ремонта</h4>
+                                <img src="img/case2-after.jpg" alt="Телефон после ремонта" loading="lazy">
+                                <p>Полностью рабочий телефон</p>
+                            </div>
                         </div>
-                        <h3>Гарантия</h3>
-                        <p>Даем официальную гарантию до 2 лет на все работы и запчасти</p>
-                    </div>
-                    
-                    <div class="benefit-card animate__animated animate__fadeIn animate-delay-2">
-                        <div class="benefit-icon">
-                            <i class="fas fa-home" aria-hidden="true"></i>
+                        <div class="case-details">
+                            <h3>Samsung S21 - ремонт после воды</h3>
+                            <div class="case-meta">
+                                <span><i class="fas fa-clock"></i> 1 час 20 минут</span>
+                                <span><i class="fas fa-ruble-sign"></i> 3200 ₽</span>
+                                <span><i class="fas fa-calendar-alt"></i> 22.05.2025</span>
+                            </div>
+                            <p>Телефон упал в воду. Мы полностью разобрали аппарат, прочистили от коррозии и заменили поврежденные компоненты.</p>
                         </div>
-                        <h3>Выезд мастера</h3>
-                        <p>Приедем в любое удобное место: дом, офис, кафе или ТЦ</p>
-                    </div>
-                    
-                    <div class="benefit-card animate__animated animate__fadeIn">
-                        <div class="benefit-icon">
-                            <i class="fas fa-search-dollar" aria-hidden="true"></i>
-                        </div>
-                        <h3>Бесплатная диагностика</h3>
-                        <p>Проведем полную диагностику и назовем точную цену до начала работ</p>
-                    </div>
+                    </article>
                 </div>
+                <button class="btn btn-outline btn-load-more">Показать еще кейсы</button>
             </div>
         </section>
 
         <!-- Отзывы -->
         <section class="testimonials" aria-labelledby="testimonials-heading">
             <div class="container">
-                <h2 id="testimonials-heading" class="section-title animate__animated animate__fadeIn">Отзывы клиентов</h2>
-                <div class="testimonial-grid">
-                    <article class="testimonial-card animate__animated animate__fadeIn">
+                <h2 id="testimonials-heading" class="section-title">Отзывы клиентов</h2>
+                <div class="testimonials-slider">
+                    <!-- Отзыв 1 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <div class="testimonial-text">
-                            <p>Уронил iPhone в воду во время рыбалки. Думал, все - конец. Но мастер приехал через 25 минут, за час починил, и телефон работает как новый! Спасибо за оперативность.</p>
+                            <p>"Уронил iPhone в воду во время рыбалки. Думал, все - конец. Но мастер приехал через 25 минут, за час починил, и телефон работает как новый! Спасибо за оперативность."</p>
                         </div>
                         <div class="testimonial-author">
                             <img src="img/client1.jpg" alt="Фото Дмитрия" class="author-avatar" loading="lazy" width="50" height="50">
                             <div>
                                 <strong>Дмитрий</strong>
                                 <div class="device-model">iPhone 12 Pro</div>
+                                <div class="testimonial-date">28 мая 2025</div>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="testimonial-card animate__animated animate__fadeIn animate-delay-1">
+                    <!-- Отзыв 2 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                         <div class="testimonial-text">
-                            <p>Замена экрана на Samsung прямо в моем офисе, пока я пила кофе. Сделали все аккуратно, даже пылинки не осталось под стеклом. Буду рекомендовать!</p>
+                            <p>"Замена экрана на Samsung прямо в моем офисе, пока я пила кофе. Сделали все аккуратно, даже пылинки не осталось под стеклом. Буду рекомендовать!"</p>
                         </div>
                         <div class="testimonial-author">
                             <img src="img/client2.jpg" alt="Фото Алины" class="author-avatar" loading="lazy" width="50" height="50">
                             <div>
                                 <strong>Алина</strong>
                                 <div class="device-model">Samsung S21</div>
+                                <div class="testimonial-date">15 мая 2025</div>
                             </div>
                         </div>
                     </article>
                     
-                    <article class="testimonial-card animate__animated animate__fadeIn animate-delay-2">
-                        <div class="testimonial-text">
-                            <p>Батарея на Xiaomi держала всего 4 часа. Мастер приехал ночью (!) и заменил за 15 минут. Теперь телефон работает полтора дня. Очень доволен сервисом.</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="img/client3.jpg" alt="Фото Артема" class="author-avatar" loading="lazy" width="50" height="50">
-                            <div>
-                                <strong>Артем</strong>
-                                <div class="device-model">Xiaomi Redmi Note 10</div>
-                            </div>
+                    <!-- Еще 8 отзывов -->
+                    <!-- ... -->
+                </div>
+                <button class="btn btn-outline btn-load-more">Показать еще отзывы</button>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading" class="section-title">Частые вопросы</h2>
+                <div class="accordion">
+                    <!-- Вопрос 1 -->
+                    <article class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
+                            <span>Как быстро приезжает мастер?</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div id="faq1" class="accordion-content">
+                            <p>Среднее время прибытия мастера - 2 часа после заявки. В экстренных случаях (полная неработоспособность телефона) стараемся приехать в течение 40 минут.</p>
                         </div>
                     </article>
+                    
+                    <!-- Вопрос 2 -->
+                    <article class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
+                            <span>Какие марки телефонов вы ремонтируете?</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div id="faq2" class="accordion-content">
+                            <p>Мы работаем со всеми популярными брендами: Apple iPhone, Samsung, Xiaomi, Huawei, Honor, Oppo, Vivo, Realme, OnePlus, Sony и другими. Даже если у вас редкая модель - скорее всего, у нас есть запчасти.</p>
+                        </div>
+                    </article>
+                    
+                    <!-- Еще вопросы -->
+                    <!-- ... -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Блок -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Остались вопросы?</h2>
+                    <p>Напишите нам в Telegram или вызовите мастера для бесплатной консультации</p>
+                    <div class="cta-buttons">
+                        <a href="#form" class="btn btn-primary">Вызвать мастера</a>
+                        <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram">
+                            <i class="fab fa-telegram"></i> Написать в Telegram
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -214,11 +318,12 @@
                                 <option>Другая проблема</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-block">Вызвать мастера</button>
-                        
-                        <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram btn-block" aria-label="Написать в Telegram">
-                            <i class="fab fa-telegram"></i> Написать в Telegram
-                        </a>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">Вызвать мастера</button>
+                            <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram">
+                                <i class="fab fa-telegram"></i> Написать в Telegram
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -228,42 +333,20 @@
     <!-- Футер -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-links">
-                    <h3>Услуги</h3>
-                    <ul>
-                        <li><a href="#">Ремонт iPhone</a></li>
-                        <li><a href="#">Ремонт Samsung</a></li>
-                        <li><a href="#">Ремонт Xiaomi</a></li>
-                        <li><a href="#">Ремонт Huawei</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Компания</h3>
-                    <ul>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Гарантия</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
+            <div class="footer-content">
+                <div class="footer-contacts">
                     <h3>Контакты</h3>
-                    <p>Казань, круглосуточно</p>
+                    <a href="tel:+78001234567" class="footer-phone">8 (800) 123-45-67</a>
+                    <p>Круглосуточно, без выходных</p>
                     <div class="social-links">
                         <a href="https://t.me/remonter_kazan_bot" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                         <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
                     </div>
-                    <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram btn-small">
-                        <i class="fab fa-telegram"></i> Наш Telegram-бот
-                    </a>
                 </div>
-            </div>
-            <div class="copyright">
-                © 2025 KazanRemont. Все права защищены.
+                <div class="footer-copyright">
+                    © 2025 KazanRemont. Все права защищены.
+                </div>
             </div>
         </div>
     </footer>
