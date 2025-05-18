@@ -9,7 +9,7 @@
     <!-- Preload -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-    <link rel="preload" href="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
+    <link rel="preload" href="images/1.jpg" as="image">
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -17,27 +17,233 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.min.css">
-    
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://api.telegram.org">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #45a049;
+            --secondary: #2196F3;
+            --dark: #333;
+            --light: #f5f5f5;
+            --gray: #777;
+            --red: #f44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/1.jpg') no-repeat center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 10px 5px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
+        }
+        
+        .btn-telegram:hover {
+            background-color: #0077b5;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--dark);
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        
+        /* Form Section */
+        .form-section {
+            padding: 60px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/2.jpg') no-repeat center/cover;
+            color: white;
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .form-title {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+        
+        /* Animations */
+        .animate-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Шапка -->
     <header class="hero" role="banner">
         <div class="container">
             <div class="hero-content animate__animated animate__fadeIn">
-                <h1>Ремонт телефонов в Казани с выездом за 40 минут</h1>
-                <p>Бесплатная диагностика · Гарантия до 2 лет · Оригинальные запчасти</p>
+                <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
+                <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
+                <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
                 <div class="hero-buttons">
                     <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
-                    <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram animate__animated animate__fadeIn animate-delay-1" aria-label="Написать в Telegram">
+                    <a href="https://t.me/kazanremont_bot" class="btn btn-telegram animate__animated animate__fadeIn animate-delay-1" aria-label="Написать в Telegram">
                         <i class="fab fa-telegram"></i> Написать в Telegram
                     </a>
-                </div>
-                <div class="hero-scroll animate__animated animate__fadeIn animate-delay-2">
-                    <span>Листайте вниз</span>
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
@@ -48,9 +254,8 @@
         <section class="discount">
             <div class="container">
                 <div class="discount-content animate__animated animate__pulse">
-                    <div class="discount-badge">Акция!</div>
-                    <h2>Скидка 15% на первый ремонт</h2>
-                    <p>Только сегодня! Успейте воспользоваться предложением:</p>
+                    <h2><span>Скидка 20%</span> на первый ремонт</h2>
+                    <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
                     <div class="timer" id="countdown">
                         <div class="timer-block">
                             <span id="hours">12</span>
@@ -77,114 +282,55 @@
                 <div class="service-grid">
                     <!-- Карточка услуги 1 -->
                     <article class="service-card animate__animated animate__fadeInUp">
-                        <picture>
-                            <source srcset="img/screen-repair.webp" type="image/webp">
-                            <img src="img/screen-repair.jpg" alt="Замена экрана телефона" class="service-img" loading="lazy" width="400" height="300">
-                        </picture>
+                        <img src="images/3.jpg" alt="Замена экрана телефона" class="service-img" loading="lazy">
                         <div class="service-content">
                             <h3 class="service-title">Замена экрана</h3>
                             <div class="service-time">
                                 <i class="fas fa-clock" aria-hidden="true"></i> 20-30 минут
                             </div>
                             <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
-                            <div class="service-price">от 2990 ₽</div>
+                            <div class="service-price">
+                                <span class="old-price">4500 ₽</span>
+                                <span class="new-price">2990 ₽</span>
+                            </div>
                             <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                     
                     <!-- Карточка услуги 2 -->
                     <article class="service-card animate__animated animate__fadeInUp animate-delay-1">
-                        <picture>
-                            <source srcset="img/battery-replacement.webp" type="image/webp">
-                            <img src="img/battery-replacement.jpg" alt="Замена аккумулятора телефона" class="service-img" loading="lazy" width="400" height="300">
-                        </picture>
+                        <img src="images/4.jpg" alt="Замена аккумулятора телефона" class="service-img" loading="lazy">
                         <div class="service-content">
                             <h3 class="service-title">Замена аккумулятора</h3>
                             <div class="service-time">
                                 <i class="fas fa-clock" aria-hidden="true"></i> 15-20 минут
                             </div>
                             <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
-                            <div class="service-price">от 2490 ₽</div>
+                            <div class="service-price">
+                                <span class="old-price">3500 ₽</span>
+                                <span class="new-price">2490 ₽</span>
+                            </div>
                             <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                     
                     <!-- Карточка услуги 3 -->
                     <article class="service-card animate__animated animate__fadeInUp animate-delay-2">
-                        <picture>
-                            <source srcset="img/water-damage.webp" type="image/webp">
-                            <img src="img/water-damage.jpg" alt="Ремонт телефона после попадания воды" class="service-img" loading="lazy" width="400" height="300">
-                        </picture>
+                        <img src="images/5.jpg" alt="Ремонт телефона после воды" class="service-img" loading="lazy">
                         <div class="service-content">
                             <h3 class="service-title">Ремонт после воды</h3>
                             <div class="service-time">
                                 <i class="fas fa-clock" aria-hidden="true"></i> от 1 часа
                             </div>
                             <p>Экстренная помощь при попадании жидкости. Спасем 90% "утопленников".</p>
-                            <div class="service-price">от 2490 ₽</div>
+                            <div class="service-price">
+                                <span class="old-price">4000 ₽</span>
+                                <span class="new-price">2990 ₽</span>
+                            </div>
                             <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
                 </div>
-            </div>
-        </section>
-
-        <!-- Кейсы -->
-        <section class="cases" aria-labelledby="cases-heading">
-            <div class="container">
-                <h2 id="cases-heading" class="section-title">Реальные кейсы ремонта</h2>
-                <div class="cases-slider">
-                    <!-- Кейс 1 -->
-                    <article class="case-card">
-                        <div class="case-before-after">
-                            <div class="case-before">
-                                <h4>До ремонта</h4>
-                                <img src="img/case1-before.jpg" alt="Телефон до ремонта" loading="lazy">
-                                <p>Разбитый экран, не работает сенсор</p>
-                            </div>
-                            <div class="case-after">
-                                <h4>После ремонта</h4>
-                                <img src="img/case1-after.jpg" alt="Телефон после ремонта" loading="lazy">
-                                <p>Новый экран, полная функциональность</p>
-                            </div>
-                        </div>
-                        <div class="case-details">
-                            <h3>iPhone 16 Pro - замена экрана</h3>
-                            <div class="case-meta">
-                                <span><i class="fas fa-clock"></i> 25 минут</span>
-                                <span><i class="fas fa-ruble-sign"></i> 4500 ₽</span>
-                                <span><i class="fas fa-calendar-alt"></i> 15.05.2025</span>
-                            </div>
-                            <p>Клиент уронил телефон на асфальт. Мы заменили экран на оригинальный с полной калибровкой. Гарантия на работу - 1 год.</p>
-                        </div>
-                    </article>
-                    
-                    <!-- Кейс 2 -->
-                    <article class="case-card">
-                        <div class="case-before-after">
-                            <div class="case-before">
-                                <h4>До ремонта</h4>
-                                <img src="img/case2-before.jpg" alt="Телефон до ремонта" loading="lazy">
-                                <p>Попала вода, не включается</p>
-                            </div>
-                            <div class="case-after">
-                                <h4>После ремонта</h4>
-                                <img src="img/case2-after.jpg" alt="Телефон после ремонта" loading="lazy">
-                                <p>Полностью рабочий телефон</p>
-                            </div>
-                        </div>
-                        <div class="case-details">
-                            <h3>Samsung S21 - ремонт после воды</h3>
-                            <div class="case-meta">
-                                <span><i class="fas fa-clock"></i> 1 час 20 минут</span>
-                                <span><i class="fas fa-ruble-sign"></i> 3200 ₽</span>
-                                <span><i class="fas fa-calendar-alt"></i> 22.05.2025</span>
-                            </div>
-                            <p>Телефон упал в воду. Мы полностью разобрали аппарат, прочистили от коррозии и заменили поврежденные компоненты.</p>
-                        </div>
-                    </article>
-                </div>
-                <button class="btn btn-outline btn-load-more">Показать еще кейсы</button>
             </div>
         </section>
 
@@ -206,11 +352,11 @@
                             <p>"Уронил iPhone в воду во время рыбалки. Думал, все - конец. Но мастер приехал через 25 минут, за час починил, и телефон работает как новый! Спасибо за оперативность."</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="img/client1.jpg" alt="Фото Дмитрия" class="author-avatar" loading="lazy" width="50" height="50">
+                            <img src="images/6.jpg" alt="Фото клиента" class="author-avatar" loading="lazy">
                             <div>
                                 <strong>Дмитрий</strong>
-                                <div class="device-model">iPhone 12 Pro</div>
-                                <div class="testimonial-date">28 мая 2025</div>
+                                <div class="device-model">iPhone 12 Pro · Казань</div>
+                                <div class="testimonial-date">28 мая 2025 · Яндекс.Карты</div>
                             </div>
                         </div>
                     </article>
@@ -228,67 +374,14 @@
                             <p>"Замена экрана на Samsung прямо в моем офисе, пока я пила кофе. Сделали все аккуратно, даже пылинки не осталось под стеклом. Буду рекомендовать!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="img/client2.jpg" alt="Фото Алины" class="author-avatar" loading="lazy" width="50" height="50">
+                            <img src="images/7.jpg" alt="Фото клиента" class="author-avatar" loading="lazy">
                             <div>
                                 <strong>Алина</strong>
-                                <div class="device-model">Samsung S21</div>
-                                <div class="testimonial-date">15 мая 2025</div>
+                                <div class="device-model">Samsung S21 · Казань</div>
+                                <div class="testimonial-date">15 мая 2025 · Google Отзывы</div>
                             </div>
                         </div>
                     </article>
-                    
-                    <!-- Еще 8 отзывов -->
-                    <!-- ... -->
-                </div>
-                <button class="btn btn-outline btn-load-more">Показать еще отзывы</button>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq" aria-labelledby="faq-heading">
-            <div class="container">
-                <h2 id="faq-heading" class="section-title">Частые вопросы</h2>
-                <div class="accordion">
-                    <!-- Вопрос 1 -->
-                    <article class="accordion-item">
-                        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
-                            <span>Как быстро приезжает мастер?</span>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div id="faq1" class="accordion-content">
-                            <p>Среднее время прибытия мастера - 2 часа после заявки. В экстренных случаях (полная неработоспособность телефона) стараемся приехать в течение 40 минут.</p>
-                        </div>
-                    </article>
-                    
-                    <!-- Вопрос 2 -->
-                    <article class="accordion-item">
-                        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
-                            <span>Какие марки телефонов вы ремонтируете?</span>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div id="faq2" class="accordion-content">
-                            <p>Мы работаем со всеми популярными брендами: Apple iPhone, Samsung, Xiaomi, Huawei, Honor, Oppo, Vivo, Realme, OnePlus, Sony и другими. Даже если у вас редкая модель - скорее всего, у нас есть запчасти.</p>
-                        </div>
-                    </article>
-                    
-                    <!-- Еще вопросы -->
-                    <!-- ... -->
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Блок -->
-        <section class="cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Остались вопросы?</h2>
-                    <p>Напишите нам в Telegram или вызовите мастера для бесплатной консультации</p>
-                    <div class="cta-buttons">
-                        <a href="#form" class="btn btn-primary">Вызвать мастера</a>
-                        <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram">
-                            <i class="fab fa-telegram"></i> Написать в Telegram
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -301,11 +394,11 @@
                     <form id="order-form" novalidate>
                         <div class="form-group">
                             <label for="client-name" class="visually-hidden">Ваше имя</label>
-                            <input type="text" id="client-name" placeholder="Ваше имя" required>
+                            <input type="text" id="client-name" placeholder="Например: Алексей" required>
                         </div>
                         <div class="form-group">
                             <label for="client-phone" class="visually-hidden">Телефон</label>
-                            <input type="tel" id="client-phone" placeholder="Телефон" required>
+                            <input type="tel" id="client-phone" placeholder="+7 (___) ___-__-__" required>
                         </div>
                         <div class="form-group">
                             <label for="client-service" class="visually-hidden">Выберите услугу</label>
@@ -320,7 +413,7 @@
                         </div>
                         <div class="form-buttons">
                             <button type="submit" class="btn btn-primary">Вызвать мастера</button>
-                            <a href="https://t.me/remonter_kazan_bot" class="btn btn-telegram">
+                            <a href="https://t.me/kazanremont_bot" class="btn btn-telegram">
                                 <i class="fab fa-telegram"></i> Написать в Telegram
                             </a>
                         </div>
@@ -339,7 +432,7 @@
                     <a href="tel:+78001234567" class="footer-phone">8 (800) 123-45-67</a>
                     <p>Круглосуточно, без выходных</p>
                     <div class="social-links">
-                        <a href="https://t.me/remonter_kazan_bot" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://t.me/kazanremont_bot" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                         <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
                     </div>
@@ -352,6 +445,54 @@
     </footer>
 
     <!-- Скрипты -->
-    <script src="js/main.min.js" defer></script>
+    <script>
+        // Обработка формы
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('client-name').value;
+            const phone = document.getElementById('client-phone').value;
+            const service = document.getElementById('client-service').value;
+            
+            // Отправка в Telegram
+            const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
+            const chatId = '5178416366';
+            const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
+            
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+                .then(response => {
+                    if (response.ok) {
+                        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                        document.getElementById('order-form').reset();
+                    } else {
+                        alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз или напишите нам в Telegram.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ошибка соединения. Пожалуйста, напишите нам в Telegram: @kazanremont_bot');
+                });
+        });
+        
+        // Таймер обратного отсчета
+        function updateTimer() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = Math.floor(hours).toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = Math.floor(minutes).toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = Math.floor(seconds).toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
