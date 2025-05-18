@@ -1,0 +1,19 @@
+﻿/* Основные стили */
+.hero {
+    background: url('../images/hero-bg.jpg') no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wow {
+    visibility: hidden;
+}
