@@ -1,34 +1,8 @@
+// === Форма ===
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('order-form');
     if (!form) return;
 
-    // Валидация телефона
-    const phoneInput = document.getElementById('client-phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', () => {
-            let value = phoneInput.value.replace(/\D/g, '');
-            if (value.length > 1) {
-                let formattedValue = '+7 ';
-                if (value.length > 1) {
-                    formattedValue += '(' + value.slice(1, 4);
-                    if (value.length > 4) {
-                        formattedValue += ') ' + value.slice(4, 7);
-                        if (value.length > 7) {
-                            formattedValue += '-' + value.slice(7, 9);
-                            if (value.length > 9) {
-                                formattedValue += '-' + value.slice(9, 11);
-                            }
-                        }
-                    }
-                }
-                phoneInput.value = formattedValue;
-            } else {
-                phoneInput.value = '';
-            }
-        });
-    }
-
-    // Обработка формы
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -47,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Отправка данных
+        // Отправка в Telegram
         const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
         const chatId = '5178416366';
         const text = `Новая заявка:
@@ -63,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`https://api.telegram.org/bot ${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
             .then(response => {
                 if (response.ok) {
-                    alert('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                    alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
                     form.reset();
                 } else {
                     throw new Error('Telegram API error');
@@ -71,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error('Ошибка:', error);
-                alert('Ошибка при отправке. Пожалуйста, напишите нам в Telegram @kazanremont_bot');
+                alert('Ошибка при отправке. Пожалуйста, напишите нам в Telegram.');
             })
             .finally(() => {
                 submitBtn.textContent = originalText;
@@ -79,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
-    // Таймер обратного отсчета
+    // === Таймер обратного отсчета ===
     const updateTimer = () => {
         const now = new Date();
         const endOfDay = new Date();
