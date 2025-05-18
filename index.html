@@ -1,628 +1,340 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия 1 год, оригинальные запчасти.">
+    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, оригинальные запчасти, гарантия до 2 лет.">
     <title>KazanRemont – Ремонт телефонов с выездом за 40 минут</title>
-    
-    <!-- Preload -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-    <link rel="preload" href="images/1.jpg" as="image">
-    
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ">
     <style>
         :root {
             --primary: #4CAF50;
             --primary-dark: #45a049;
             --secondary: #2196F3;
-            --dark: #333;
-            --light: #f5f5f5;
+            --dark: #222;
+            --light: #f9f9f9;
             --gray: #777;
-            --red: #f44336;
+            --bg-overlay: rgba(0,0,0,0.6);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             color: var(--dark);
             background-color: var(--light);
+            margin: 0;
+            padding: 0;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-        
-        /* Hero Section */
+
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/1.jpg') no-repeat center/cover;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('images/1.jpg') no-repeat center/cover;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
-            position: relative;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        
-        /* Buttons */
+
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
+            padding: 14px 26px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             margin: 10px 5px;
+            text-decoration: none;
+            text-align: center;
         }
-        
+
         .btn-primary {
             background-color: var(--primary);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
-        
+
         .btn-telegram {
             background-color: #0088cc;
             color: white;
         }
-        
+
         .btn-telegram:hover {
             background-color: #0077b5;
         }
-        
-        /* Services Section */
-        .services {
-            padding: 60px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: var(--dark);
-        }
-        
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .service-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 15px 0;
-        }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 1rem;
-            margin-right: 10px;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        /* Cases Section */
-        .cases {
-            padding: 60px 0;
-            background-color: white;
-        }
-        
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .case-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .case-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        /* Form Section */
-        .form-section {
-            padding: 60px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/preview (1).webp') no-repeat center/cover;
-            color: white;
-        }
-        
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.9);
+
+        /* Скидка */
+        .discount-content {
+            background: #fff3cd;
+            border-radius: 12px;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .form-title {
-            color: var(--dark);
             text-align: center;
-            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
         }
-        
-        .form-group {
-            margin-bottom: 20px;
+
+        .timer-block {
+            display: inline-block;
+            margin: 0 10px;
+            text-align: center;
         }
-        
+
+        .timer-block span:first-child {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+            color: var(--primary);
+        }
+
+        /* Отзывы */
+        .testimonial-card img.author-avatar {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* О нас */
+        .about-text {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Форма */
+        .form-container {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
         input, select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 1rem;
+            margin-bottom: 15px;
         }
-        
+
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-        }
-        
-        /* Animations */
-        .animate-delay-1 {
-            animation-delay: 0.3s;
-        }
-        
-        .animate-delay-2 {
-            animation-delay: 0.6s;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка -->
-    <header class="hero" role="banner">
-        <div class="container">
-            <div class="hero-content animate__animated animate__fadeIn">
-                <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
-                <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
-                <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
-                <div class="hero-buttons">
-                    <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
-                    <a href="https://t.me/kazanremont_bot" class="btn btn-telegram animate__animated animate__fadeIn animate-delay-1" aria-label="Написать в Telegram">
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container">
+        <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
+        <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
+        <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
+        <div class="hero-buttons">
+            <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
+            <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" aria-label="Написать в Telegram">
+                <i class="fab fa-telegram"></i> Написать в Telegram
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Скидка -->
+<section class="discount">
+    <div class="container">
+        <div class="discount-content animate__animated animate__pulse">
+            <h2><span style="color: var(--primary);">Скидка 20%</span> на первый ремонт</h2>
+            <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
+            <div id="countdown" style="margin: 20px 0; font-size: 1.2rem;">
+                <div class="timer-block"><span id="hours">12</span><span>часов</span></div>
+                <div class="timer-block"><span id="minutes">00</span><span>минут</span></div>
+                <div class="timer-block"><span id="seconds">00</span><span>секунд</span></div>
+            </div>
+            <a href="#form" class="btn btn-primary">Получить скидку</a>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="service-grid">
+            <!-- Замена экрана -->
+            <article class="service-card">
+                <img src="images/3.jpg" alt="Замена экрана телефона" width="300" height="200" loading="lazy">
+                <div class="service-content">
+                    <h3>Замена экрана</h3>
+                    <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
+                    <div class="service-price">
+                        <span class="old-price">4500 ₽</span>
+                        <span class="new-price">2990 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
+                </div>
+            </article>
+            <!-- Замена аккумулятора -->
+            <article class="service-card">
+                <img src="images/4.jpg" alt="Замена аккумулятора телефона" width="300" height="200" loading="lazy">
+                <div class="service-content">
+                    <h3>Замена аккумулятора</h3>
+                    <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
+                    <div class="service-price">
+                        <span class="old-price">3500 ₽</span>
+                        <span class="new-price">2490 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
+                </div>
+            </article>
+            <!-- Ремонт после воды -->
+            <article class="service-card">
+                <img src="images/5.jpg" alt="Ремонт телефона после воды" width="300" height="200" loading="lazy">
+                <div class="service-content">
+                    <h3>Ремонт после воды</h3>
+                    <p>Экстренная помощь при попадании жидкости. Спасем 90% «утопленников».</p>
+                    <div class="service-price">
+                        <span class="old-price">4000 ₽</span>
+                        <span class="new-price">2990 ₽</span>
+                    </div>
+                    <a href="#form" class="btn btn-primary">Заказать</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- О нас -->
+<section class="about">
+    <div class="container">
+        <h2>О нашей мастерской</h2>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <div style="flex: 1;">
+                <img src="images/15.jpg" alt="Мастерская ремонта телефонов" width="100%" height="auto" loading="lazy">
+            </div>
+            <div style="flex: 1;">
+                <h3>Профессиональный ремонт с 2018 года</h3>
+                <p>Наша команда из 12 опытных мастеров обслужила более 10 000 клиентов в Казани. Используем только оригинальные запчасти и профессиональное оборудование.</p>
+                <ul>
+                    <li>✅ Официальная гарантия до 2 лет</li>
+                    <li>✅ Бесплатная диагностика</li>
+                    <li>✅ Работаем круглосуточно</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Форма -->
+<section id="form" class="form-section">
+    <div class="container">
+        <div class="form-container">
+            <h2>Вызвать мастера</h2>
+            <form id="order-form" novalidate>
+                <input type="text" id="client-name" placeholder="Например: Алексей" required>
+                <input type="tel" id="client-phone" placeholder="+7 (___) ___-__-__" required>
+                <select id="client-service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option>Замена экрана</option>
+                    <option>Замена аккумулятора</option>
+                    <option>Ремонт после воды</option>
+                    <option>Диагностика</option>
+                    <option>Другая проблема</option>
+                </select>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Вызвать мастера</button>
+                    <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram">
                         <i class="fab fa-telegram"></i> Написать в Telegram
                     </a>
                 </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer>
+    <div class="container">
+        <div>
+            <h3>Контакты</h3>
+            <div class="social-links">
+                <a href="https://t.me/remonter_kazan_bot " aria-label="Telegram"><i class="fab fa-telegram"></i></a>
             </div>
         </div>
-    </header>
-
-    <main>
-        <!-- Таймер скидки -->
-        <section class="discount">
-            <div class="container">
-                <div class="discount-content animate__animated animate__pulse">
-                    <h2><span>Скидка 20%</span> на первый ремонт</h2>
-                    <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
-                    <div class="timer" id="countdown">
-                        <div class="timer-block">
-                            <span id="hours">12</span>
-                            <span>часов</span>
-                        </div>
-                        <div class="timer-block">
-                            <span id="minutes">00</span>
-                            <span>минут</span>
-                        </div>
-                        <div class="timer-block">
-                            <span id="seconds">00</span>
-                            <span>секунд</span>
-                        </div>
-                    </div>
-                    <a href="#form" class="btn btn-primary">Получить скидку</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Услуги -->
-        <section id="services" class="services" aria-labelledby="services-heading">
-            <div class="container">
-                <h2 id="services-heading" class="section-title animate__animated animate__fadeIn">Наши услуги</h2>
-                <div class="service-grid">
-                    <!-- Карточка услуги 1 -->
-                    <article class="service-card animate__animated animate__fadeInUp">
-                        <img src="images/3.jpg" alt="Замена экрана телефона" class="service-img" loading="lazy">
-                        <div class="service-content">
-                            <h3 class="service-title">Замена экрана</h3>
-                            <div class="service-time">
-                                <i class="fas fa-clock" aria-hidden="true"></i> 20-30 минут
-                            </div>
-                            <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
-                            <div class="service-price">
-                                <span class="old-price">4500 ₽</span>
-                                <span class="new-price">2990 ₽</span>
-                            </div>
-                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Карточка услуги 2 -->
-                    <article class="service-card animate__animated animate__fadeInUp animate-delay-1">
-                        <img src="images/4.jpg" alt="Замена аккумулятора телефона" class="service-img" loading="lazy">
-                        <div class="service-content">
-                            <h3 class="service-title">Замена аккумулятора</h3>
-                            <div class="service-time">
-                                <i class="fas fa-clock" aria-hidden="true"></i> 15-20 минут
-                            </div>
-                            <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
-                            <div class="service-price">
-                                <span class="old-price">3500 ₽</span>
-                                <span class="new-price">2490 ₽</span>
-                            </div>
-                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Карточка услуги 3 -->
-                    <article class="service-card animate__animated animate__fadeInUp animate-delay-2">
-                        <img src="images/5.jpg" alt="Ремонт телефона после воды" class="service-img" loading="lazy">
-                        <div class="service-content">
-                            <h3 class="service-title">Ремонт после воды</h3>
-                            <div class="service-time">
-                                <i class="fas fa-clock" aria-hidden="true"></i> от 1 часа
-                            </div>
-                            <p>Экстренная помощь при попадании жидкости. Спасем 90% "утопленников".</p>
-                            <div class="service-price">
-                                <span class="old-price">4000 ₽</span>
-                                <span class="new-price">2990 ₽</span>
-                            </div>
-                            <a href="#form" class="btn btn-primary btn-block">Заказать</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- О нас -->
-        <section class="about" aria-labelledby="about-heading">
-            <div class="container">
-                <h2 id="about-heading" class="section-title">О нашей мастерской</h2>
-                <div class="about-content">
-                    <div class="about-img">
-                        <img src="images/15.jpg" alt="Наша команда мастеров" loading="lazy">
-                    </div>
-                    <div class="about-text">
-                        <h3>Профессиональный ремонт с 2018 года</h3>
-                        <p>Наша команда из 12 мастеров с опытом работы от 5 лет обслужила более 10 000 клиентов в Казани. Мы используем только оригинальные запчасти и профессиональное оборудование.</p>
-                        <div class="trust-items">
-                            <div class="trust-item">
-                                <img src="images/11.jpg" alt="Гарантийный талон" loading="lazy">
-                                <p>Официальная гарантия</p>
-                            </div>
-                            <div class="trust-item">
-                                <img src="images/12.jpg" alt="Оригинальные запчасти" loading="lazy">
-                                <p>Оригинальные комплектующие</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Кейсы ремонта -->
-        <section class="cases" aria-labelledby="cases-heading">
-            <div class="container">
-                <h2 id="cases-heading" class="section-title">Реальные примеры ремонта</h2>
-                <div class="case-grid">
-                    <article class="case-card">
-                        <img src="images/8.jpg" alt="iPhone до ремонта" class="case-img" loading="lazy">
-                        <div class="case-content">
-                            <h3>Разбитый экран iPhone 13</h3>
-                            <p>Полная замена дисплея с сохранением оригинальной цветопередачи</p>
-                        </div>
-                    </article>
-                    <article class="case-card">
-                        <img src="images/9.jpg" alt="iPhone после ремонта" class="case-img" loading="lazy">
-                        <div class="case-content">
-                            <h3>Результат после ремонта</h3>
-                            <p>Новый экран с заводской калибровкой</p>
-                        </div>
-                    </article>
-                    <article class="case-card">
-                        <img src="images/10.jpg" alt="Телефон после воды" class="case-img" loading="lazy">
-                        <div class="case-content">
-                            <h3>Ремонт после попадания воды</h3>
-                            <p>Чистка от коррозии и замена поврежденных компонентов</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Процесс работы -->
-        <section class="process" aria-labelledby="process-heading">
-            <div class="container">
-                <h2 id="process-heading" class="section-title">Как мы работаем</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <img src="images/13.jpg" alt="Выезд мастера" loading="lazy">
-                        <h3>1. Выезд мастера</h3>
-                        <p>Приезжаем в удобное для вас время в течение 40 минут</p>
-                    </div>
-                    <div class="process-step">
-                        <img src="images/14.jpg" alt="Диагностика" loading="lazy">
-                        <h3>2. Бесплатная диагностика</h3>
-                        <p>Используем профессиональное оборудование</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Отзывы -->
-        <section class="testimonials" aria-labelledby="testimonials-heading">
-            <div class="container">
-                <h2 id="testimonials-heading" class="section-title">Отзывы клиентов</h2>
-                <div class="testimonials-slider">
-                    <!-- Отзыв 1 -->
-                    <article class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>"Уронил iPhone в воду во время рыбалки. Думал, все - конец. Но мастер приехал через 25 минут, за час починил, и телефон работает как новый! Спасибо за оперативность."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/6.jpg" alt="Фото клиента" class="author-avatar" loading="lazy">
-                            <div>
-                                <strong>Дмитрий</strong>
-                                <div class="device-model">iPhone 12 Pro · Казань</div>
-                                <div class="testimonial-date">28 мая 2025 · Яндекс.Карты</div>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Отзыв 2 -->
-                    <article class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>"Замена экрана на Samsung прямо в моем офисе, пока я пила кофе. Сделали все аккуратно, даже пылинки не осталось под стеклом. Буду рекомендовать!"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/7.jpg" alt="Фото клиента" class="author-avatar" loading="lazy">
-                            <div>
-                                <strong>Алина</strong>
-                                <div class="device-model">Samsung S21 · Казань</div>
-                                <div class="testimonial-date">15 мая 2025 · Google Отзывы</div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Форма -->
-        <section id="form" class="form-section" aria-labelledby="form-heading">
-            <div class="container">
-                <div class="form-container animate__animated animate__fadeIn">
-                    <h2 id="form-heading" class="form-title">Вызвать мастера</h2>
-                    <form id="order-form" novalidate>
-                        <div class="form-group">
-                            <label for="client-name" class="visually-hidden">Ваше имя</label>
-                            <input type="text" id="client-name" placeholder="Например: Алексей" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-phone" class="visually-hidden">Телефон</label>
-                            <input type="tel" id="client-phone" placeholder="+7 (___) ___-__-__" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-service" class="visually-hidden">Выберите услугу</label>
-                            <select id="client-service" required>
-                                <option value="" disabled selected>Выберите услугу</option>
-                                <option>Замена экрана</option>
-                                <option>Замена аккумулятора</option>
-                                <option>Ремонт после воды</option>
-                                <option>Диагностика</option>
-                                <option>Другая проблема</option>
-                            </select>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="submit" class="btn btn-primary">Вызвать мастера</button>
-                            <a href="https://t.me/kazanremont_bot" class="btn btn-telegram">
-                                <i class="fab fa-telegram"></i> Написать в Telegram
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Футер -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-contacts">
-                    <h3>Контакты</h3>
-                    <a href="tel:+78001234567" class="footer-phone">8 (800) 123-45-67</a>
-                    <p>Круглосуточно, без выходных</p>
-                    <div class="social-links">
-                        <a href="https://t.me/kazanremont_bot" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    © 2025 KazanRemont. Все права защищены.
-                </div>
-            </div>
+        <div class="footer-copyright">
+            © 2025 KazanRemont. Все права защищены.
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- Скрипты -->
-    <script>
-        // Обработка формы
-        document.getElementById('order-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('client-name').value;
-            const phone = document.getElementById('client-phone').value;
-            const service = document.getElementById('client-service').value;
-            
-            // Отправка в Telegram
-            const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
-            const chatId = '5178416366';
-            const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
-            
-            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-                .then(response => {
-                    if (response.ok) {
-                        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-                        document.getElementById('order-form').reset();
-                    } else {
-                        alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз или напишите нам в Telegram.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Ошибка соединения. Пожалуйста, напишите нам в Telegram: @kazanremont_bot');
-                });
-        });
-        
-        // Таймер обратного отсчета
-        function updateTimer() {
-            const now = new Date();
-            const endOfDay = new Date();
-            endOfDay.setHours(23, 59, 59, 999);
-            
-            const diff = endOfDay - now;
-            
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('hours').textContent = Math.floor(hours).toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = Math.floor(minutes).toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = Math.floor(seconds).toString().padStart(2, '0');
-        }
-        
-        setInterval(updateTimer, 1000);
-        updateTimer();
-    </script>
+<script>
+    // Таймер
+    function updateTimer() {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
+        const diff = endOfDay - now;
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Форма
+    document.getElementById('order-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('client-name').value;
+        const phone = document.getElementById('client-phone').value;
+        const service = document.getElementById('client-service').value;
+
+        const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
+        const chatId = '5178416366';
+        const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
+
+        fetch(`https://api.telegram.org/bot ${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
+            .then(response => {
+                if (response.ok) {
+                    alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                    document.getElementById('order-form').reset();
+                } else {
+                    alert('Ошибка при отправке. Пожалуйста, напишите нам в Telegram.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ошибка соединения. Пожалуйста, напишите нам в Telegram: @remonter_kazan_bot');
+            });
+    });
+</script>
+
 </body>
 </html>
