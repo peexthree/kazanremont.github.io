@@ -1,24 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Таймер обратного отсчета
-    function updateTimer() {
-        const now = new Date();
-        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
-        const diff = endOfDay - now;
-        
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    // Таймер обратного отсчета до конца дня
+function updateTimer() {
+    const now = new Date();
+    const endOfDay = new Date(now);
+    endOfDay.setHours(23, 59, 59, 999);
 
-        if (document.getElementById('hours')) {
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-    }
+    const diff = endOfDay - now;
 
-    setInterval(updateTimer, 1000);
-    updateTimer();
+    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('hours')?.classList.replace('animate__pulse', 'animate__flipInY');
+    document.getElementById('minutes')?.classList.replace('animate__pulse', 'animate__flipInY');
+    document.getElementById('seconds')?.classList.replace('animate__pulse', 'animate__flipInY');
+
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+// Обновляем каждую секунду
+setInterval(updateTimer, 1000);
+updateTimer(); // Запуск сразу при загрузке страницы
 
     // Обработка формы
     const orderForm = document.getElementById('order-form');
