@@ -1,4 +1,10 @@
-﻿/* Основные стили */
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: #333;
+}
+
 .hero {
     background: url('../images/hero-bg.jpg') no-repeat center/cover;
     height: 100vh;
@@ -6,12 +12,78 @@
     align-items: center;
     text-align: center;
     color: white;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background: #ff5722;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #e64a19;
+    transform: translateY(-3px);
+}
+
+.tg-button {
+    background: #0088cc;
+}
+
+/* Форма */
+.lead-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.lead-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.lead-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-note {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form-note a {
+    color: #0088cc;
+    text-decoration: none;
 }
 
 /* Анимации */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .wow {
