@@ -1,74 +1,39 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeleFix — ремонт телефонов в Казани</title>
+    <title>TeleFix – Срочный ремонт телефонов в Казани</title>
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
     <!-- Шапка с параллаксом -->
-    <header class="hero" id="home">
-        <div class="container">
-            <h1 class="wow fadeInDown">Ремонт телефонов <span>с выездом за 30 минут</span></h1>
-            <p class="wow fadeInUp" data-wow-delay="0.2s">Бесплатная диагностика • Гарантия 1 год</p>
-            <a href="#form" class="btn btn-primary wow pulse" data-wow-iteration="3">Вызвать мастера</a>
+    <header class="hero">
+        <div class="container wow fadeInDown">
+            <h1>Ремонт телефонов <span>с выездом за 30 минут</span></h1>
+            <p>Бесплатная диагностика • Гарантия 1 год • Работаем 24/7</p>
+            <a href="https://t.me/remonter_kazan_bot" class="btn tg-button">📱 Написать в бота</a>
         </div>
     </header>
 
-    <!-- Блок преимуществ -->
-    <section class="advantages">
-        <div class="container">
-            <div class="advantage-card wow fadeInLeft">
-                <img src="images/icon-warranty.svg" alt="Гарантия">
-                <h3>Гарантия 12 месяцев</h3>
-            </div>
-            <!-- +2 карточки -->
-        </div>
-    </section>
-
     <!-- Форма заявки -->
-    <section class="form-section" id="form">
-        <form class="lead-form wow zoomIn">
+    <section class="form-section wow fadeIn">
+        <form class="lead-form" id="order-form">
             <input type="text" placeholder="Ваше имя" required>
             <input type="tel" placeholder="Телефон" required>
             <button type="submit">Жду звонка</button>
+            <p class="form-note">
+                Или напишите напрямую: 
+                <a href="https://t.me/remonter_kazan_bot">@remonter_kazan_bot</a>
+            </p>
         </form>
     </section>
 
     <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
-css/style.css
-css
-/* Основные стили */
-.hero {
-    background: url('../images/hero-bg.jpg') no-repeat center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-/* Анимации */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.wow {
-    visibility: hidden;
-}
-js/script.js
-javascript
-// Инициализация анимаций
-new WOW().init();
-
-// Отправка формы в Telegram
-document.querySelector('.lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetch(`https://api.telegram.org/bot8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro/sendMessage?chat_id=5178416366&text=Новая заявка`);
-});
