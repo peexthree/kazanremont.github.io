@@ -1,321 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ремонт телефонов в Казани с выездом за 40 минут. Бесплатная диагностика, оригинальные запчасти, гарантия до 2 лет. Работаем круглосуточно.">
-    <meta name="keywords" content="ремонт, Казань, телефон, мастер, сервис, iPhone, Android, замена экрана, замена аккумулятора, водяной ремонт">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия до 2 лет, оригинальные запчасти."/>
     <title>KazanRemont – Ремонт телефонов с выездом за 40 минут</title>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ">
-
-    <style>
-        :root {
-            --primary: #4CAF50;
-            --primary-dark: #45a049;
-            --dark: #333;
-            --light: #f5f5f5;
-            --gray: #777;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/1.jpg') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin: 10px 5px;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-telegram {
-            background-color: #0088cc;
-            color: white;
-        }
-
-        .btn-telegram:hover {
-            background-color: #0077b5;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 60px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: var(--dark);
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .service-content {
-            padding: 20px;
-        }
-
-        .service-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .service-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 15px 0;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 1rem;
-            margin-right: 10px;
-        }
-
-        .new-price {
-            color: var(--primary);
-        }
-
-        /* About Section */
-        .about {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        /* Cases Section */
-        .cases {
-            padding: 60px 0;
-            background-color: white;
-        }
-
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .case-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .case-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        /* Form Section */
-        .form-section {
-            padding: 60px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/preview (1).webp') center/cover no-repeat;
-            color: white;
-        }
-
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.95);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .form-title {
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        /* Отзывы */
-        .testimonials-slider {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .testimonial-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-rating .fa-star {
-            color: gold;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- Hero -->
 <header class="hero">
     <div class="container">
-        <div class="hero-content animate__animated animate__fadeIn">
+        <div class="hero-content animate__fadeIn">
             <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
             <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
             <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
             <div class="hero-buttons">
                 <a href="#form" class="btn btn-primary">Вызвать мастера</a>
-                <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" target="_blank" aria-label="Написать в Telegram">
+                <a href="https://t.me/remonter_kazan_bot?start=app " target="_blank" class="btn btn-telegram">
                     <i class="fab fa-telegram"></i> Написать в Telegram
                 </a>
             </div>
@@ -324,10 +32,10 @@
 </header>
 
 <main>
-    <!-- Таймер скидок -->
+    <!-- Таймер -->
     <section class="discount">
         <div class="container">
-            <div class="discount-content animate__animated animate__pulse">
+            <div class="discount-content animate__pulse">
                 <h2><span style="color: var(--primary);">Скидка 20%</span> на первый ремонт</h2>
                 <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
                 <div id="countdown" class="timer">
@@ -343,14 +51,13 @@
     <!-- Услуги -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title animate__animated animate__fadeIn">Наши услуги</h2>
+            <h2 class="section-title">Наши услуги</h2>
             <div class="service-grid">
-                <!-- Замена экрана -->
-                <article class="service-card animate__animated animate__fadeInUp">
-                    <img src="images/3.jpg" alt="Замена экрана телефона" loading="lazy">
+                <article class="service-card animate__fadeInUp">
+                    <img src="images/3.jpg" alt="Замена экрана телефона" loading="lazy" width="300" height="200">
                     <div class="service-content">
-                        <h3 class="service-title">Замена экрана</h3>
-                        <p>Оригинальные дисплеи с гарантией. Вернем прежнюю чувствительность и яркость.</p>
+                        <h3>Замена экрана</h3>
+                        <p>Профессиональная замена дисплеев iPhone и Android. Используем только проверенные комплектующие.</p>
                         <div class="service-price">
                             <span class="old-price">4500 ₽</span>
                             <span class="new-price">2990 ₽</span>
@@ -358,12 +65,11 @@
                         <a href="#form" class="btn btn-primary">Заказать</a>
                     </div>
                 </article>
-                <!-- Замена аккумулятора -->
-                <article class="service-card animate__animated animate__fadeInUp animate-delay-1">
-                    <img src="images/4.jpg" alt="Замена аккумулятора телефона" loading="lazy">
+                <article class="service-card animate__fadeInUp animate-delay-1s">
+                    <img src="images/4.jpg" alt="Замена аккумулятора" loading="lazy" width="300" height="200">
                     <div class="service-content">
-                        <h3 class="service-title">Замена аккумулятора</h3>
-                        <p>Новые аккумуляторы с увеличенным сроком службы. Телефон снова держит заряд.</p>
+                        <h3>Замена аккумулятора</h3>
+                        <p>Новые батареи с увеличенной ёмкостью. Восстановление первоначальной работы устройства.</p>
                         <div class="service-price">
                             <span class="old-price">3500 ₽</span>
                             <span class="new-price">2490 ₽</span>
@@ -371,12 +77,11 @@
                         <a href="#form" class="btn btn-primary">Заказать</a>
                     </div>
                 </article>
-                <!-- Ремонт после воды -->
-                <article class="service-card animate__animated animate__fadeInUp animate-delay-2">
-                    <img src="images/5.jpg" alt="Ремонт после воды" loading="lazy">
+                <article class="service-card animate__fadeInUp animate-delay-2s">
+                    <img src="images/5.jpg" alt="Ремонт после воды" loading="lazy" width="300" height="200">
                     <div class="service-content">
-                        <h3 class="service-title">Ремонт после воды</h3>
-                        <p>Экстренная помощь при попадании жидкости. Спасем 90% «утопленников».</p>
+                        <h3>Ремонт после воды</h3>
+                        <p>Чистка платы, удаление коррозии, восстановление функциональности. От 1 часа.</p>
                         <div class="service-price">
                             <span class="old-price">4000 ₽</span>
                             <span class="new-price">2990 ₽</span>
@@ -391,14 +96,14 @@
     <!-- О нас -->
     <section class="about">
         <div class="container">
-            <h2 class="section-title">О нашей мастерской</h2>
+            <h2>О нашей мастерской</h2>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="images/15.jpg" alt="Команда мастеров" loading="lazy">
+                    <img src="images/15.jpg" alt="Мастерская ремонта телефонов" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Профессиональный ремонт с 2018 года</h3>
-                    <p>Наша команда из 12 опытных мастеров обслужила более 10 000 клиентов в Казани. Используем только оригинальные запчасти и профессиональное оборудование.</p>
+                    <p>Команда из 12 опытных мастеров выполнила более 10 000 заказов. Мы используем только оригинальные запчасти и профессиональное оборудование.</p>
                     <ul>
                         <li>✅ Официальная гарантия до 2 лет</li>
                         <li>✅ Бесплатная диагностика</li>
@@ -431,7 +136,7 @@
                 <article class="case-card">
                     <img src="images/10.jpg" alt="Телефон после воды" loading="lazy" width="300" height="200">
                     <div class="case-content">
-                        <h3>Ремонт после воды</h3>
+                        <h3>Ремонт после попадания воды</h3>
                         <p>Чистка платы, удаление коррозии, восстановление функциональности.</p>
                     </div>
                 </article>
@@ -442,7 +147,7 @@
     <!-- Форма -->
     <section id="form" class="form-section">
         <div class="container">
-            <div class="form-container animate__animated animate__fadeIn">
+            <div class="form-container animate__fadeIn">
                 <h2>Вызвать мастера</h2>
                 <form id="order-form" novalidate>
                     <input type="text" id="client-name" placeholder="Ваше имя" required>
@@ -450,15 +155,12 @@
                     <select id="client-service" required>
                         <option value="" disabled selected>Выберите услугу</option>
                         <option>Замена экрана</option>
-                        <option>Замена аккуммулятора</option>
+                        <option>Замена аккумулятора</option>
                         <option>Ремонт после воды</option>
                         <option>Диагностика</option>
                         <option>Другая проблема</option>
                     </select>
                     <button type="submit" class="btn btn-primary">Вызвать мастера</button>
-                    <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" target="_blank">
-                        <i class="fab fa-telegram"></i> Написать в Telegram
-                    </a>
                 </form>
             </div>
         </div>
@@ -482,7 +184,7 @@
                         <p>"Уронил телефон в воду. Думал всё. Но мастер приехал через полчаса, починил за час. Теперь как новый!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/6.jpg" alt="Фото клиента Дмитрий" loading="lazy" class="author-avatar">
+                        <img src="images/6.jpg" alt="Фото клиента Дмитрий" class="author-avatar" loading="lazy">
                         <div>
                             <strong>Дмитрий</strong>
                             <div>iPhone 12 Pro · Казань</div>
@@ -500,10 +202,10 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-text">
-                        <p>"Замена экрана заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую своим коллегам!"</p>
+                        <p>"Замена экрана у меня в офисе заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую своим коллегам!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/7.jpg" alt="Фото клиента Алина" loading="lazy" class="author-avatar">
+                        <img src="images/7.jpg" alt="Фото клиента Алина" class="author-avatar" loading="lazy">
                         <div>
                             <strong>Алина</strong>
                             <div>Samsung S21 · Казань</div>
@@ -511,10 +213,602 @@
                         </div>
                     </div>
                 </article>
+                <!-- Отзыв 3 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Не ожидал такого оперативного ремонта. Диагностика показала поломку контроллера. Починили за день — спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg " alt="Иван" class="author-avatar">
+                        <div>
+                            <strong>Иван</strong>
+                            <div>Google Pixel · Казань</div>
+                            <small>10 июня 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 4 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Обратился после того, как телефон перестал работать. Диагностика показала поломку контроллера. Починили за день — спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg " alt="Оксана" class="author-avatar" loading="lazy">
+                        <div>
+                            <strong>Оксана</strong>
+                            <div>Xiaomi Mi 12 · Казань</div>
+                            <small>03 июня 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 5 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Мастер приехал домой, починил планшет прямо дома. Все детали оказались с собой. Очень удобно!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/3.jpg " alt="Евгений" class="author-avatar">
+                        <div>
+                            <strong>Евгений</strong>
+                            <div>Google Pixel · Казань</div>
+                            <small>28 апреля 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 6 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена экрана заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую своим коллегам!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg " alt="Ольга" class="author-avatar">
+                        <div>
+                            <strong>Ольга</strong>
+                            <div>OnePlus Nord · Казань</div>
+                            <small>10 марта 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 7 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Телефон не включался после падения. Мастер быстро нашел проблему и заменил дисплей. Теперь всё работает."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/4.jpg " alt="Алексей" class="author-avatar">
+                        <div>
+                            <strong>Алексей</strong>
+                            <div>iPhone 13 · Казань</div>
+                            <small>12 января 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 8 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Не ожидал такого уровня сервиса. Починили мой Samsung прямо дома. Все было сделано аккуратно и быстро."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/4.jpg " alt="Наталья" class="author-avatar">
+                        <div>
+                            <strong>Наталья</strong>
+                            <div>Samsung Galaxy A53 · Казань</div>
+                            <small>20 февраля 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 9 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Мастер приехал через 30 минут, провёл диагностику и заменил аккумулятор. Всё чётко и понятно."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/5.jpg " alt="Антон" class="author-avatar">
+                        <div>
+                            <strong>Антон</strong>
+                            <div>iPhone 11 · Казань</div>
+                            <small>18 марта 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 10 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Сломался разъём зарядки. Починили за 30 минут. Спасибо за оперативность!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/5.jpg " alt="Мария" class="author-avatar">
+                        <div>
+                            <strong>Мария</strong>
+                            <div>iPhone 14 · Казань</div>
+                            <small>05 декабря 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 11 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена стекла прошла идеально. Ни одной царапины. Теперь экран как новый."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/6.jpg " alt="Максим" class="author-avatar">
+                        <div>
+                            <strong>Максим</strong>
+                            <div>iPhone 13 · Казань</div>
+                            <small>10 ноября 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 12 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Телефон перестал реагировать на прикосновения. Починили за 20 минут. Отличный сервис!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/6.jpg " alt="Ксения" class="author-avatar">
+                        <div>
+                            <strong>Ксения</strong>
+                            <div>iPhone 12 · Казань</div>
+                            <small>03 октября 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 13 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Не ожидал, что мастер приедет так быстро. Починили телефон за полчаса. Отличный результат."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/7.jpg " alt="Игорь" class="author-avatar">
+                        <div>
+                            <strong>Игорь</strong>
+                            <div>iPhone 11 · Казань</div>
+                            <small>12 сентября 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 14 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Попал под дождь, телефон перестал работать. Спасли его, теперь снова пользуюсь."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/7.jpg " alt="Ольга" class="author-avatar">
+                        <div>
+                            <strong>Ольга</strong>
+                            <div>iPhone 12 Mini · Казань</div>
+                            <small>20 августа 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 15 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Диагностика показала поломку контроллера. Заменили за день — спасибо за быстрое решение."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/8.jpg " alt="Иван" class="author-avatar">
+                        <div>
+                            <strong>Иван</strong>
+                            <div>Google Pixel · Казань</div>
+                            <small>10 июля 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 16 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена камеры прошла отлично. Мастер сам приехал со всем необходимым. Спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/8.jpg " alt="Анна" class="author-avatar">
+                        <div>
+                            <strong>Анна</strong>
+                            <div>iPad mini · Казань</div>
+                            <small>15 июня 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 17 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Телефон не заряжался. Диагностика выявила проблему с портом. Починили за час — спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/9.jpg " alt="Артём" class="author-avatar">
+                        <div>
+                            <strong>Артём</strong>
+                            <div>iPhone SE · Казань</div>
+                            <small>18 мая 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 18 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Остались очень довольны. Мастер приехал в течение 40 минут и починил мне смартфон."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/9.jpg " alt="Екатерина" class="author-avatar">
+                        <div>
+                            <strong>Екатерина</strong>
+                            <div>Samsung Galaxy S22 · Казань</div>
+                            <small>22 апреля 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 19 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Телефон перестал реагировать на прикосновения. Мастер быстро определил проблему и заменил экран. Спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/10.jpg " alt="Никита" class="author-avatar">
+                        <div>
+                            <strong>Никита</strong>
+                            <div>iPhone 14 Pro · Казань</div>
+                            <small>10 марта 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 20 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Починили мой телефон за 20 минут. Быстро, качественно, без лишних слов."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/10.jpg " alt="Виктория" class="author-avatar">
+                        <div>
+                            <strong>Виктория</strong>
+                            <div>iPhone 13 · Казань</div>
+                            <small>03 февраля 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 21 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Уронил телефон в воду. Мастер приехал через 30 минут и починил за час. Теперь как новый!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg " alt="Сергей" class="author-avatar">
+                        <div>
+                            <strong>Сергей</strong>
+                            <div>iPhone 12 · Казань</div>
+                            <small>10 января 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 22 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Обратился после другого сервиса. Здесь всё сделали правильно и быстро. Буду рекомендовать вас друзьям."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg " alt="Людмила" class="author-avatar">
+                        <div>
+                            <strong>Людмила</strong>
+                            <div>iPhone 14 · Казань</div>
+                            <small>28 декабря 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 23 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена стекла прошла отлично. Ни одной царапины. Мастер был вежлив и аккуратен."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg " alt="Андрей" class="author-avatar">
+                        <div>
+                            <strong>Андрей</strong>
+                            <div>iPhone 13 · Казань</div>
+                            <small>15 ноября 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 24 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Ремонт прошёл гладко. Приехали вовремя, всё объяснили, починили за час."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg " alt="Оксана" class="author-avatar">
+                        <div>
+                            <strong>Оксана</strong>
+                            <div>iPhone 14 · Казань</div>
+                            <small>03 октября 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 25 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Очень доволен! Позвонил, приехал мастер, сделал всё на месте. Без очередей и долгих ожиданий."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/13.jpg " alt="Евгений" class="author-avatar">
+                        <div>
+                            <strong>Евгений</strong>
+                            <div>iPhone 12 Pro · Казань</div>
+                            <small>12 сентября 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 26 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Мастер приехал вовремя, всё починил. Не нужно никуда ехать — всё делается у вас дома."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/13.jpg " alt="Анна" class="author-avatar">
+                        <div>
+                            <strong>Анна</strong>
+                            <div>iPhone 13 · Казань</div>
+                            <small>20 августа 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 27 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Попал под дождь, телефон перестал работать. Спасли его, теперь снова пользуюсь."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/14.jpg " alt="Максим" class="author-avatar">
+                        <div>
+                            <strong>Максим</strong>
+                            <div>iPhone 11 · Казань</div>
+                            <small>10 июля 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 28 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена экрана заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую знакомым."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/14.jpg " alt="Ольга" class="author-avatar">
+                        <div>
+                            <strong>Ольга</strong>
+                            <div>iPhone 12 Mini · Казань</div>
+                            <small>15 июня 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 29 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Поломался порт зарядки. Починили за 30 минут. Теперь всё работает как положено."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/15.jpg " alt="Алексей" class="author-avatar">
+                        <div>
+                            <strong>Алексей</strong>
+                            <div>iPhone SE · Казань</div>
+                            <small>18 мая 2025 · Яндекс.Карты</small>
+                        </div>
+                    </div>
+                </article>
+                <!-- Отзыв 30 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Замена камеры прошла отлично. Мастер сам приехал со всем необходимым. Спасибо!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/15.jpg " alt="Мария" class="author-avatar">
+                        <div>
+                            <strong>Мария</strong>
+                            <div>iPad mini · Казань</div>
+                            <small>22 апреля 2025 · Google Отзывы</small>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 </main>
+
+<!-- Telegram WebApp -->
+<iframe id="tg-app" src="https://t.me/remonter_kazan_bot?start=app " style="display:none; width:100%; height:500px;"></iframe>
+<a href="#" onclick="showTelegramApp()" class="tg-app-link">💬 Открыть Telegram Чат</a>
 
 <!-- Footer -->
 <footer class="footer">
@@ -525,45 +819,8 @@
     </div>
 </footer>
 
-<script>
-    // Таймер
-    function updateTimer() {
-        const now = new Date();
-        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
-        const diff = endOfDay - now;
-        document.getElementById('hours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-    }
-
-    setInterval(updateTimer, 1000);
-    updateTimer();
-
-    // Форма
-    document.getElementById('order-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = this.clientName.value.trim();
-        const phone = this.clientPhone.value.trim();
-        const service = this.clientService.value;
-
-        const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
-        const chatId = '5178416366';
-        const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
-
-        fetch(`https://api.telegram.org/bot ${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-            .then(response => {
-                if (response.ok) {
-                    alert('Заявка отправлена!');
-                    this.reset();
-                } else {
-                    throw new Error('Telegram error');
-                }
-            })
-            .catch(() => {
-                alert('Ошибка. Пожалуйста, напишите нам в Telegram.');
-            });
-    });
-</script>
+<!-- JS -->
+<script src="js/script.js" defer></script>
 
 </body>
 </html>
