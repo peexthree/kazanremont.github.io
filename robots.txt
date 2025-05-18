@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow:
+
+Sitemap: https://peexthree.github.io/kazanremont.github.io/sitemap.xml
