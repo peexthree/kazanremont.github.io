@@ -22,37 +22,46 @@ if (document.getElementById('countdown')) {
 }
 
 // === Форма ===
-const form = document.getElementById('order-form');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+document.getElementById("masterForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const token = "8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro";
+    const chatId = "5178416366";
+    const name = this.name.value.trim();
+    const phone = this.phone.value.trim();
 
-        const name = this.clientName.value.trim();
-        const phone = this.clientPhone.value.trim();
-        const service = this.clientService.value;
+    // Проверка заполнения полей
+    if (!name || !phone) {
+        alert("Пожалуйста, заполните все поля!");
+        return;
+    }
 
-        const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
-        const chatId = '5178416366';
+    const text = `📌 Новая заявка на ремонт!\nИмя: ${name}\nТелефон: ${phone}\n\nСайт: kazanremont.github.io`;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-        const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
-
-        fetch(`https://api.telegram.org/bot ${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-            .then(res => res.json())
-            .then(data => {
-                alert('Заявка отправлена!');
-                form.reset();
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text,
+                parse_mode: "HTML"
             })
-            .catch(() => {
-                alert('Ошибка. Напишите нам напрямую.');
-            });
-    });
-}
+        });
 
-// === Раскрытие кейсов ===
-const expandBtn = document.querySelector('.accordion-expand-all');
-if (expandBtn) {
-    expandBtn.addEventListener('click', () => {
-        const details = document.querySelectorAll('.case-details');
-        details.forEach(detail => detail.setAttribute('open', true));
-    });
-}
+        const data = await response.json();
+        
+        if (data.ok) {
+            alert("✅ Заявка отправлена! Мастер свяжется с вами в течение 10 минут.");
+            this.reset();
+        } else {
+            throw new Error(data.description || "Ошибка отправки");
+        }
+    } catch (error) {
+        console.error("Ошибка:", error);
+        alert(`❌ Ошибка отправки! Пожалуйста, напишите нам напрямую в Telegram: https://t.me/kazanremont\n\n${error.message}`);
+    }
+});
