@@ -26,39 +26,49 @@ setInterval(updateTimer, 1000);
 updateTimer(); // Запуск сразу при загрузке страницы
 
     // Обработка формы
-    const orderForm = document.getElementById('order-form');
-    if (orderForm) {
-        orderForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('client-name').value.trim();
-            const phone = document.getElementById('client-phone').value.trim();
-            const service = document.getElementById('client-service').value;
+   document.getElementById("masterForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const token = "8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro";
+    const chatId = "5178416366";
+    const name = this.name.value.trim();
+    const phone = this.phone.value.trim();
 
-            if (!name || !phone || !service) {
-                alert('Пожалуйста, заполните все поля');
-                return;
-            }
-
-            const botToken = '8104403306:AAEH9qUcQaoryZV7Ws9HB0AEqp_sdOgrbro';
-            const chatId = '5178416366';
-            const text = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service}`;
-
-            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`)
-                .then(response => {
-                    if (response.ok) {
-                        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-                        this.reset();
-                    } else {
-                        throw new Error('Ошибка отправки');
-                    }
-                })
-                .catch(() => {
-                    alert('Ошибка при отправке. Пожалуйста, напишите нам в Telegram.');
-                });
-        });
+    // Проверка заполнения полей
+    if (!name || !phone) {
+        alert("Пожалуйста, заполните все поля!");
+        return;
     }
 
+    const text = `📌 Новая заявка на ремонт!\nИмя: ${name}\nТелефон: ${phone}\n\nСайт: kazanremont.github.io`;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text,
+                parse_mode: "HTML"
+            })
+        });
+
+        const data = await response.json();
+        
+        if (data.ok) {
+            alert("✅ Заявка отправлена! Мастер свяжется с вами в течение 10 минут.");
+            this.reset();
+        } else {
+            throw new Error(data.description || "Ошибка отправки");
+        }
+    } catch (error) {
+        console.error("Ошибка:", error);
+        alert(`❌ Ошибка отправки! Пожалуйста, напишите нам напрямую в Telegram: https://t.me/kazanremont\n\n${error.message}`);
+    }
+});
 
 // Скрипт для открытия Telegram бота
 document.getElementById('send-photo-btn')?.addEventListener('click', () => {
