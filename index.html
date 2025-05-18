@@ -162,10 +162,61 @@
             margin-right: 10px;
         }
         
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        /* Cases Section */
+        .cases {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .case-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .case-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
         /* Form Section */
         .form-section {
             padding: 60px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/2.jpg') no-repeat center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/preview (1).webp') no-repeat center/cover;
             color: white;
         }
         
@@ -227,6 +278,10 @@
             
             .hero p {
                 font-size: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
             }
         }
     </style>
@@ -330,6 +385,81 @@
                             <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- О нас -->
+        <section class="about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading" class="section-title">О нашей мастерской</h2>
+                <div class="about-content">
+                    <div class="about-img">
+                        <img src="images/15.jpg" alt="Наша команда мастеров" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <h3>Профессиональный ремонт с 2018 года</h3>
+                        <p>Наша команда из 12 мастеров с опытом работы от 5 лет обслужила более 10 000 клиентов в Казани. Мы используем только оригинальные запчасти и профессиональное оборудование.</p>
+                        <div class="trust-items">
+                            <div class="trust-item">
+                                <img src="images/11.jpg" alt="Гарантийный талон" loading="lazy">
+                                <p>Официальная гарантия</p>
+                            </div>
+                            <div class="trust-item">
+                                <img src="images/12.jpg" alt="Оригинальные запчасти" loading="lazy">
+                                <p>Оригинальные комплектующие</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Кейсы ремонта -->
+        <section class="cases" aria-labelledby="cases-heading">
+            <div class="container">
+                <h2 id="cases-heading" class="section-title">Реальные примеры ремонта</h2>
+                <div class="case-grid">
+                    <article class="case-card">
+                        <img src="images/8.jpg" alt="iPhone до ремонта" class="case-img" loading="lazy">
+                        <div class="case-content">
+                            <h3>Разбитый экран iPhone 13</h3>
+                            <p>Полная замена дисплея с сохранением оригинальной цветопередачи</p>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <img src="images/9.jpg" alt="iPhone после ремонта" class="case-img" loading="lazy">
+                        <div class="case-content">
+                            <h3>Результат после ремонта</h3>
+                            <p>Новый экран с заводской калибровкой</p>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <img src="images/10.jpg" alt="Телефон после воды" class="case-img" loading="lazy">
+                        <div class="case-content">
+                            <h3>Ремонт после попадания воды</h3>
+                            <p>Чистка от коррозии и замена поврежденных компонентов</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Процесс работы -->
+        <section class="process" aria-labelledby="process-heading">
+            <div class="container">
+                <h2 id="process-heading" class="section-title">Как мы работаем</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <img src="images/13.jpg" alt="Выезд мастера" loading="lazy">
+                        <h3>1. Выезд мастера</h3>
+                        <p>Приезжаем в удобное для вас время в течение 40 минут</p>
+                    </div>
+                    <div class="process-step">
+                        <img src="images/14.jpg" alt="Диагностика" loading="lazy">
+                        <h3>2. Бесплатная диагностика</h3>
+                        <p>Используем профессиональное оборудование</p>
+                    </div>
                 </div>
             </div>
         </section>
