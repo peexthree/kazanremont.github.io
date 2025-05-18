@@ -1,19 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Раскрытие/сворачивание аккордеона
-    const expandBtn = document.querySelector('.accordion-expand-all');
-    if (expandBtn) {
-        expandBtn.addEventListener('click', function() {
-            const allDetails = document.querySelectorAll('.case-details');
-            const isAnyOpen = [...allDetails].some(detail => detail.open);
-            
-            allDetails.forEach(detail => {
-                detail.open = !isAnyOpen;
-            });
-            
-            this.textContent = isAnyOpen ? 'Развернуть все кейсы' : 'Свернуть все кейсы';
-        });
-    }
-
+    
     // Таймер обратного отсчета
     function updateTimer() {
         const now = new Date();
@@ -68,18 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Кнопка отправки фото
-    const sendPhotoBtn = document.getElementById('send-photo-btn');
-    if (sendPhotoBtn) {
-        sendPhotoBtn.addEventListener('click', function() {
-            const phone = document.getElementById('client-phone')?.value.trim() || '';
-            const phoneNumber = phone.replace(/\D/g, '');
-            const whatsappUrl = `https://wa.me/79111111111?text=${encodeURIComponent('Здравствуйте! Отправляю фото повреждения телефона. Мой номер: ' + phoneNumber)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        });
-    }
+    // Скрипт для сворачивания всех кейсов
+document.querySelector('.accordion-collapse-all')?.addEventListener('click', () => {
+    const allDetails = document.querySelectorAll('.case-details');
+    allDetails.forEach(details => {
+        details.removeAttribute('open'); // Закрываем все <details>
+    });
+});
 
+// Скрипт для открытия Telegram бота
+document.getElementById('send-photo-btn')?.addEventListener('click', () => {
+    window.location.href = "https://t.me/remonter_kazan_bot ";
+});
     // Маска для телефона
     const phoneInput = document.getElementById('client-phone');
     if (phoneInput) {
