@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия 1 год, оригинальные запчасти.">
+    <meta name="description" content="Срочный ремонт телефонов в Казани с выездом мастера. Бесплатная диагностика, гарантия 2 года, оригинальные запчасти.">
     <title>KazanRemont – Ремонт телефонов с выездом за 40 минут</title>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Animate On Scroll CSS -->
-    <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Preload -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css " as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css " as="style">
+    <link rel="preload" href="images/1.jpg" as="image">
 
-    <!-- Font Awesome -->
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ">
 
-    <!-- AOS Animation & Custom Styles -->
     <style>
         :root {
             --primary: #4CAF50;
@@ -24,7 +26,7 @@
             --dark: #333;
             --light: #f5f5f5;
             --gray: #777;
-            --red: #f44336;
+            --bg-overlay: rgba(0,0,0,0.7);
         }
 
         * {
@@ -49,10 +51,11 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/1.jpg') no-repeat center/cover;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('images/1.jpg') no-repeat center/cover;
             color: white;
             padding: 100px 0;
             text-align: center;
+            position: relative;
         }
 
         .hero-content {
@@ -78,7 +81,7 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s;
+            transition: all 0.3s ease-in-out;
             margin: 10px 5px;
             cursor: pointer;
         }
@@ -102,7 +105,149 @@
             background-color: #0077b5;
         }
 
-        /* Таймер скидок */
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--dark);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* Cases Section */
+        .cases {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .case-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .case-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 60px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/preview (1).webp') no-repeat center/cover;
+            color: white;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .form-title {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Discount Timer */
         .discount-content {
             background: #fff3cd;
             border-radius: 12px;
@@ -143,54 +288,7 @@
             color: var(--dark);
         }
 
-        /* Услуги */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .service-content {
-            padding: 20px;
-        }
-
-        .service-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .service-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 15px 0;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 1rem;
-            margin-right: 10px;
-        }
-
-        /* Отзывы клиентов */
+        /* Testimonials */
         .testimonials-slider {
             display: flex;
             gap: 20px;
@@ -223,31 +321,6 @@
             height: 50px;
             object-fit: cover;
             border-radius: 50%;
-        }
-
-        /* Форма */
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.9);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .form-title {
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            margin-bottom: 15px;
         }
 
         /* Footer */
@@ -298,13 +371,13 @@
 <!-- Шапка -->
 <header class="hero" role="banner">
     <div class="container">
-        <div class="hero-content" data-aos="fade-up">
+        <div class="hero-content animate__animated animate__fadeIn">
             <h1>Ремонт телефонов в Казани <span>с выездом за 40 минут</span></h1>
             <p>✅ <strong>10 000+</strong> отремонтированных телефонов · ✅ <strong>98%</strong> довольных клиентов</p>
             <p>Бесплатная диагностика · Гарантия 2 года · Оригинальные запчасти</p>
             <div class="hero-buttons">
-                <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite" data-aos="zoom-in">Вызвать мастера</a>
-                <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" aria-label="Написать в Telegram" data-aos="zoom-in" data-aos-delay="200">
+                <a href="#form" class="btn btn-primary animate__animated animate__pulse animate__infinite">Вызвать мастера</a>
+                <a href="https://t.me/remonter_kazan_bot " class="btn btn-telegram" aria-label="Написать в Telegram">
                     <i class="fab fa-telegram"></i> Написать в Telegram
                 </a>
             </div>
@@ -313,11 +386,11 @@
 </header>
 
 <main>
-    <!-- Скидка -->
-    <section class="discount" data-aos="fade-up">
+    <!-- Таймер скидки -->
+    <section class="discount">
         <div class="container">
-            <div class="discount-content">
-                <h2 style="color: var(--primary); font-size: 2rem;"><span style="text-shadow: 0 0 5px yellow;">Скидка 20%</span> на первый ремонт</h2>
+            <div class="discount-content animate__animated animate__pulse">
+                <h2><span style="color: var(--primary);">Скидка 20%</span> на первый ремонт</h2>
                 <p>🔥 <strong>5 мастеров</strong> сейчас свободны · ⏳ <strong>3 клиента</strong> оформляют заявку</p>
                 <div id="countdown" class="timer">
                     <div class="timer-block">
@@ -330,17 +403,18 @@
                         <span id="seconds">00</span><br><span>секунд</span>
                     </div>
                 </div>
-                <a href="#form" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Получить скидку</a>
+                <a href="#form" class="btn btn-primary">Получить скидку</a>
             </div>
         </div>
     </section>
 
     <!-- Услуги -->
-    <section id="services" class="services" aria-labelledby="services-heading" data-aos="fade-up">
+    <section id="services" class="services" aria-labelledby="services-heading">
         <div class="container">
-            <h2 id="services-heading" class="section-title">Наши услуги</h2>
+            <h2 id="services-heading" class="section-title animate__animated animate__fadeIn">Наши услуги</h2>
             <div class="service-grid">
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <!-- Карточка услуги 1 -->
+                <article class="service-card animate__animated animate__fadeInUp">
                     <img src="images/3.jpg" alt="Замена экрана телефона" loading="lazy" width="300" height="200">
                     <div class="service-content">
                         <h3 class="service-title">Замена экрана</h3>
@@ -355,10 +429,11 @@
                         <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                     </div>
                 </article>
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <!-- Карточка услуги 2 -->
+                <article class="service-card animate__animated animate__fadeInUp animate__delay-1s">
                     <img src="images/4.jpg" alt="Замена аккумулятора телефона" loading="lazy" width="300" height="200">
                     <div class="service-content">
-                        <h3 class="service-title">Замена аккуммулятора</h3>
+                        <h3 class="service-title">Замена аккумулятора</h3>
                         <div class="service-time">
                             <i class="fas fa-clock" aria-hidden="true"></i> 15–20 минут
                         </div>
@@ -370,7 +445,8 @@
                         <a href="#form" class="btn btn-primary btn-block">Заказать</a>
                     </div>
                 </article>
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <!-- Карточка услуги 3 -->
+                <article class="service-card animate__animated animate__fadeInUp animate__delay-2s">
                     <img src="images/5.jpg" alt="Ремонт телефона после воды" loading="lazy" width="300" height="200">
                     <div class="service-content">
                         <h3 class="service-title">Ремонт после воды</h3>
@@ -390,14 +466,14 @@
     </section>
 
     <!-- О нас -->
-    <section class="about" aria-labelledby="about-heading" data-aos="fade-up">
+    <section class="about" aria-labelledby="about-heading">
         <div class="container">
             <h2 id="about-heading" class="section-title">О нашей мастерской</h2>
             <div class="about-content">
-                <div class="about-img" data-aos="zoom-in" data-aos-delay="100">
+                <div class="about-img">
                     <img src="images/15.jpg" alt="Мастерская ремонта телефонов" loading="lazy" width="600" height="auto">
                 </div>
-                <div class="about-text" data-aos="zoom-in" data-aos-delay="200">
+                <div class="about-text">
                     <h3>Профессиональный ремонт с 2018 года</h3>
                     <p>Наша команда из 12 опытных мастеров обслужила более 10 000 клиентов в Казани. Используем только оригинальные запчасти и профессиональное оборудование.</p>
                     <div class="trust-items">
@@ -416,9 +492,9 @@
     </section>
 
     <!-- Примеры работ -->
-    <section class="cases" data-aos="fade-up">
+    <section class="cases" aria-labelledby="cases-heading">
         <div class="container">
-            <h2 class="section-title">Реальные примеры ремонта</h2>
+            <h2 id="cases-heading" class="section-title">Реальные примеры ремонта</h2>
             <div class="case-grid">
                 <article class="case-card">
                     <img src="images/8.jpg" alt="iPhone до ремонта" loading="lazy" width="300" height="200">
@@ -446,17 +522,17 @@
     </section>
 
     <!-- Процесс работы -->
-    <section class="process" data-aos="fade-up">
+    <section class="process" aria-labelledby="process-heading">
         <div class="container">
-            <h2 class="section-title">Как мы работаем</h2>
+            <h2 id="process-heading" class="section-title">Как мы работаем</h2>
             <div class="process-steps">
-                <div data-aos="fade-right">
-                    <img src="images/13.jpg" alt="Выезд мастера" loading="lazy" width="100%" height="150px">
+                <div class="process-step">
+                    <img src="images/13.jpg" alt="Выезд мастера" loading="lazy" width="300" height="200">
                     <h3>1. Выезд мастера</h3>
-                    <p>Приезжаем в удобное время в течение 40 минут</p>
+                    <p>Приезжаем в удобное для вас время в течение 40 минут</p>
                 </div>
-                <div data-aos="fade-left">
-                    <img src="images/14.jpg" alt="Диагностика" loading="lazy" width="100%" height="150px">
+                <div class="process-step">
+                    <img src="images/14.jpg" alt="Диагностика" loading="lazy" width="300" height="200">
                     <h3>2. Диагностика</h3>
                     <p>Точная диагностика бесплатно</p>
                 </div>
@@ -465,10 +541,11 @@
     </section>
 
     <!-- Отзывы -->
-    <section class="testimonials" aria-labelledby="testimonials-heading" data-aos="fade-up">
+    <section class="testimonials" aria-labelledby="testimonials-heading">
         <div class="container">
             <h2 id="testimonials-heading" class="section-title">Отзывы клиентов</h2>
             <div class="testimonials-slider">
+                <!-- Отзыв 1 -->
                 <article class="testimonial-card">
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -477,7 +554,7 @@
                         <p>"Уронил iPhone в воду во время рыбалки. Думал, всё — конец. Но мастер приехал через 25 минут, починил за час, и телефон работает как новый!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/6.jpg" alt="Фото клиента Дмитрий" loading="lazy" class="author-avatar">
+                        <img src="images/6.jpg" alt="Фото клиента Дмитрий" loading="lazy" class="author-avatar" width="50" height="50">
                         <div>
                             <strong>Дмитрий</strong>
                             <div>iPhone 12 Pro · Казань</div>
@@ -485,6 +562,7 @@
                         </div>
                     </div>
                 </article>
+                <!-- Отзыв 2 -->
                 <article class="testimonial-card">
                     <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -493,7 +571,7 @@
                         <p>"Замена экрана на Samsung прямо в офисе заняла меньше часа. Всё аккуратно, без царапин. Обязательно порекомендую своим коллегам!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/7.jpg" alt="Фото клиента Алина" loading="lazy" class="author-avatar">
+                        <img src="images/7.jpg" alt="Фото клиента Алина" loading="lazy" class="author-avatar" width="50" height="50">
                         <div>
                             <strong>Алина</strong>
                             <div>Samsung S21 · Казань</div>
@@ -506,9 +584,9 @@
     </section>
 
     <!-- Форма -->
-    <section id="form" class="form-section" aria-labelledby="form-heading" data-aos="fade-up">
+    <section id="form" class="form-section" aria-labelledby="form-heading">
         <div class="container">
-            <div class="form-container">
+            <div class="form-container animate__animated animate__fadeIn">
                 <h2 id="form-heading" class="form-title">Вызвать мастера</h2>
                 <form id="order-form" novalidate>
                     <div class="form-group">
@@ -559,19 +637,12 @@
     </div>
 </footer>
 
-<!-- Подключение скриптов -->
-<script src="https://unpkg.com/aos @2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-
-<!-- Форма + Таймер -->
+<!-- JS -->
 <script>
     // Таймер
     function updateTimer() {
         const now = new Date();
-        const endOfDay = new Date();
-        endOfDay.setHours(23, 59, 59, 999);
+        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
         const diff = endOfDay - now;
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
@@ -580,6 +651,7 @@
         document.getElementById('minutes').textContent = minutes;
         document.getElementById('seconds').textContent = seconds;
     }
+
     setInterval(updateTimer, 1000);
     updateTimer();
 
@@ -603,8 +675,7 @@
                     throw new Error('Telegram error');
                 }
             })
-            .catch(error => {
-                console.error('Ошибка:', error);
+            .catch(() => {
                 alert('Ошибка. Пожалуйста, напишите нам в Telegram.');
             });
     });
